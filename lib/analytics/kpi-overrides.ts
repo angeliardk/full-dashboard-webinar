@@ -19,6 +19,7 @@ export interface KpiFieldDef {
 export const KPI_FIELDS: KpiFieldDef[] = [
   { key: "attendance.databaseParticipantCount", label: "Peserta Database", group: "Kehadiran", get: (m) => m.attendance.databaseParticipantCount, set: (m, v) => { m.attendance.databaseParticipantCount = v; } },
   { key: "attendance.registeredCount", label: "Registrasi", group: "Kehadiran", get: (m) => m.attendance.registeredCount, set: (m, v) => { m.attendance.registeredCount = v; } },
+  { key: "attendance.zoomPresentCount", label: "Hadir Zoom (>=5 menit)", group: "Kehadiran", get: (m) => m.attendance.zoomPresentCount, set: (m, v) => { m.attendance.zoomPresentCount = v; } },
   { key: "attendance.zoomValidAttendeeCount", label: "Hadir Zoom Valid", group: "Kehadiran", get: (m) => m.attendance.zoomValidAttendeeCount, set: (m, v) => { m.attendance.zoomValidAttendeeCount = v; } },
   { key: "attendance.registeredAndAttendedCount", label: "Registrasi & Hadir", group: "Kehadiran", get: (m) => m.attendance.registeredAndAttendedCount, set: (m, v) => { m.attendance.registeredAndAttendedCount = v; } },
   { key: "attendance.attendedWithoutRegistrationCount", label: "Hadir Tanpa Registrasi", group: "Kehadiran", get: (m) => m.attendance.attendedWithoutRegistrationCount, set: (m, v) => { m.attendance.attendedWithoutRegistrationCount = v; } },

@@ -36,6 +36,18 @@ describe("calculateAttendanceMetrics", () => {
     const m = calculateAttendanceMetrics([p1, p2]);
     expect(m.unidentifiedUnitCount).toBe(1);
   });
+
+  it("counts zoomPresentCount as a looser >=5 minute (or no-duration) tier above zoomValidAttendeeCount", () => {
+    const below5 = makeParticipant({ attendance: { ...makeParticipant().attendance, inZoomCsv: true, zoomDurationMinutes: 2, zoomValidAttendee: false } });
+    const between5and30 = makeParticipant({ attendance: { ...makeParticipant().attendance, inZoomCsv: true, zoomDurationMinutes: 12, zoomValidAttendee: false } });
+    const over30 = makeParticipant({ attendance: { ...makeParticipant().attendance, inZoomCsv: true, zoomDurationMinutes: 45, zoomValidAttendee: true } });
+    const noDurationOnRecord = makeParticipant({ attendance: { ...makeParticipant().attendance, inZoomCsv: true, zoomDurationMinutes: null, zoomValidAttendee: true } });
+    const neverJoined = makeParticipant({ attendance: { ...makeParticipant().attendance, inZoomCsv: false, zoomDurationMinutes: null, zoomValidAttendee: false } });
+    const m = calculateAttendanceMetrics([below5, between5and30, over30, noDurationOnRecord, neverJoined]);
+    expect(m.zoomPresentCount).toBe(3); // between5and30, over30, noDurationOnRecord
+    expect(m.zoomValidAttendeeCount).toBe(2); // over30, noDurationOnRecord
+    expect(m.zoomValidAttendeeCount).toBeLessThanOrEqual(m.zoomPresentCount);
+  });
 });
 
 describe("calculateLearningMetrics", () => {

@@ -11,7 +11,7 @@ import { UnitDistributionSection } from "./UnitDistributionSection";
 import { DataQualitySection } from "./DataQualitySection";
 import { NarrativesSection } from "./NarrativesSection";
 import { WebinarEditor } from "./WebinarEditor";
-import { C } from "@/lib/theme";
+import { C, num } from "@/lib/theme";
 import type { Participant, Webinar, WebinarMetadata, WebinarNarratives } from "@/types/webinar";
 import type { WebinarMetrics } from "@/types/analytics";
 
@@ -92,6 +92,7 @@ export function WebinarDashboard({
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5">
         <Kpi label="Peserta Database" value={metrics.attendance.databaseParticipantCount} accent={C.slate} overridden={overriddenKeys.has("attendance.databaseParticipantCount")} />
         <Kpi label="Registrasi" value={metrics.attendance.registeredCount} accent={C.cyan} overridden={overriddenKeys.has("attendance.registeredCount")} />
+        <Kpi label="Hadir Zoom (>=5m)" value={metrics.attendance.zoomPresentCount} accent={C.violet} overridden={overriddenKeys.has("attendance.zoomPresentCount")} />
         <Kpi label="Hadir Zoom Valid" value={metrics.attendance.zoomValidAttendeeCount} accent={C.blue} overridden={overriddenKeys.has("attendance.zoomValidAttendeeCount")} />
         <Kpi label="Pre-Test" value={metrics.learning.preRespondentCount} accent={C.violet} overridden={overriddenKeys.has("learning.preRespondentCount")} />
         <Kpi label="Post-Test" value={metrics.learning.postRespondentCount} accent={C.green} overridden={overriddenKeys.has("learning.postRespondentCount")} />
@@ -118,8 +119,13 @@ export function WebinarDashboard({
           <Card className="p-5">
             <h3 className="mb-2 flex items-center gap-2 text-[15px] font-semibold" style={{ color: C.ink }}><Users size={17} style={{ color: C.blue }} />Kehadiran Singkat</h3>
             <p className="text-[12.5px]" style={{ color: C.inkSoft }}>
-              {metrics.attendance.zoomValidAttendeeCount} peserta hadir valid dari {metrics.attendance.registeredCount} registrasi
-              ({metrics.attendance.registeredAndAttendedCount} keduanya, {metrics.attendance.attendedWithoutRegistrationCount} hadir tanpa registrasi).
+              {`${num(metrics.attendance.zoomPresentCount)} peserta hadir (≥5 menit) dan ${num(
+                metrics.attendance.zoomValidAttendeeCount,
+              )} di antaranya hadir valid (>${webinar.metadata.attendanceThresholdMinutes} menit) dari ${num(
+                metrics.attendance.registeredCount,
+              )} registrasi (${num(metrics.attendance.registeredAndAttendedCount)} keduanya, ${num(
+                metrics.attendance.attendedWithoutRegistrationCount,
+              )} hadir tanpa registrasi).`}
             </p>
           </Card>
           <Card className="p-5">

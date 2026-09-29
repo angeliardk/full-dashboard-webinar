@@ -64,16 +64,26 @@ describe("Webinar 5 baked-in seed", () => {
     expect(metrics.attendance.databaseParticipantCount).toBe(w5.participants.length - excludedCount);
   });
 
-  it("counts every registrant, but only >=30 minute Zoom attendance as hadir", () => {
+  it("counts every registrant, with two attendance tiers: >=5 minutes present and >=30 minutes valid", () => {
     const metrics = calculateWebinarMetrics(w5);
     expect(metrics.attendance.registeredCount).toBeGreaterThan(400);
+    expect(metrics.attendance.zoomPresentCount).toBeGreaterThan(200);
     expect(metrics.attendance.zoomValidAttendeeCount).toBeGreaterThan(200);
+    // the >=30m tier is always a subset of the >=5m tier, never larger.
+    expect(metrics.attendance.zoomValidAttendeeCount).toBeLessThanOrEqual(metrics.attendance.zoomPresentCount);
     expect(metrics.attendance.zoomValidAttendeeCount).toBeLessThan(metrics.attendance.registeredCount);
     for (const p of w5.participants.filter((p) => !p.excluded)) {
       if (p.attendance.zoomDurationMinutes != null) {
         expect(p.attendance.zoomValidAttendee).toBe(p.attendance.zoomDurationMinutes >= 30);
       }
     }
+  });
+
+  it("excludes the single-letter junk pre-test submission", () => {
+    const junk = w5.participants.find((p) => p.name.trim() === "a");
+    expect(junk).toBeDefined();
+    expect(junk?.excluded).toBe(true);
+    expect(junk?.exclusionReason).toBeTruthy();
   });
 
   it("computes sane, non-zero KPI numbers purely from participant data (nothing hand-typed)", () => {

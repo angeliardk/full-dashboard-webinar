@@ -43,6 +43,9 @@ export interface LearningMetrics {
 export interface AttendanceMetrics {
   databaseParticipantCount: number;
   registeredCount: number;
+  /** Present in Zoom with >=5 minutes (or no duration on record at all), a looser "showed up" count. */
+  zoomPresentCount: number;
+  /** Present in Zoom above the webinar's stricter attendanceThresholdMinutes (default 30). */
   zoomValidAttendeeCount: number;
   registeredAndAttendedCount: number;
   attendedWithoutRegistrationCount: number;

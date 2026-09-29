@@ -7,6 +7,7 @@ function baseMetrics(): WebinarMetrics {
     attendance: {
       databaseParticipantCount: 100,
       registeredCount: 90,
+      zoomPresentCount: 84,
       zoomValidAttendeeCount: 80,
       registeredAndAttendedCount: 70,
       attendedWithoutRegistrationCount: 10,
