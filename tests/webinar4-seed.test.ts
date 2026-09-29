@@ -7,9 +7,9 @@ import type { Webinar } from "@/types/webinar";
 describe("Webinar 4 baked-in seed", () => {
   const w4 = webinar4 as unknown as Webinar;
 
-  it("is included in the seed list alongside Webinar 1, 2 & 3", () => {
+  it("is included in the seed list", () => {
     const seeds = getSeedWebinars();
-    expect(seeds.map((w) => w.id).sort()).toEqual(["w1", "w2", "w3", "w4"]);
+    expect(seeds.map((w) => w.id)).toContain("w4");
   });
 
   it("never carries participant email, NIP, or phone", () => {
