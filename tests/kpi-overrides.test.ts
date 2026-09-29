@@ -48,6 +48,7 @@ function baseMetrics(): WebinarMetrics {
       textComments: [],
     },
     units: [],
+    companyGroups: [],
     questions: null,
     completion: { preRate: 75, postRate: 68, feedbackRate: 50 },
   };

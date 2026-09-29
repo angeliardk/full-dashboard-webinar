@@ -4,6 +4,7 @@ import { calculateAttendanceMetrics } from "./attendance";
 import { calculateLearningMetrics } from "./learning";
 import { calculateFeedbackMetrics } from "./feedback";
 import { calculateUnitDistribution, calculateQuestionMetrics } from "./units";
+import { calculateCompanyGroupDistribution } from "./pln-company-group";
 import { activeParticipants, ratio } from "./helpers";
 
 export function calculateCompletionRates(webinar: Webinar): CompletionRates {
@@ -25,6 +26,7 @@ export function calculateWebinarMetrics(webinar: Webinar): WebinarMetrics {
     learning: calculateLearningMetrics(webinar.participants),
     feedback: calculateFeedbackMetrics(webinar.feedback),
     units: calculateUnitDistribution(webinar.participants),
+    companyGroups: calculateCompanyGroupDistribution(webinar.participants),
     questions: calculateQuestionMetrics(webinar.questions),
     completion: calculateCompletionRates(webinar),
   };

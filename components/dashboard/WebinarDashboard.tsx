@@ -153,7 +153,7 @@ export function WebinarDashboard({
       {sub === "pembelajaran" && <LearningSection metrics={metrics} />}
       {sub === "feedback" && <FeedbackSection metrics={metrics} />}
       {sub === "pertanyaan" && <QuestionsSection webinar={webinar} metrics={metrics.questions} />}
-      {sub === "unit" && <UnitDistributionSection units={metrics.units} />}
+      {sub === "unit" && <UnitDistributionSection units={metrics.units} companyGroups={metrics.companyGroups} />}
       {sub === "temuan" && <NarrativesSection narratives={webinar.narratives} editMode={canEdit} onChange={onUpdateNarratives} />}
       {sub === "kualitas" && <DataQualitySection webinar={webinar} />}
       {sub === "admin" && canEdit && (

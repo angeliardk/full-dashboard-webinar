@@ -91,6 +91,8 @@ export interface WebinarMetrics {
   learning: LearningMetrics;
   feedback: FeedbackMetrics;
   units: UnitDistributionRow[];
+  /** Coarser "PLN Pusat vs anak perusahaan PLN" rollup of `units`. */
+  companyGroups: UnitDistributionRow[];
   questions: QuestionActivityMetrics | null;
   completion: CompletionRates;
 }

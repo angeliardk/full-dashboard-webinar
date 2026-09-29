@@ -3,6 +3,7 @@ import { calculateAttendanceMetrics } from "@/lib/analytics/attendance";
 import { calculateLearningMetrics } from "@/lib/analytics/learning";
 import { calculateFeedbackMetrics, categorizeComment } from "@/lib/analytics/feedback";
 import { calculateUnitDistribution } from "@/lib/analytics/units";
+import { classifyPlnCompanyGroup, calculateCompanyGroupDistribution } from "@/lib/analytics/pln-company-group";
 import { makeFeedback, makeParticipant } from "./fixtures/participant-factory";
 
 describe("calculateAttendanceMetrics", () => {
@@ -151,6 +152,49 @@ describe("calculateUnitDistribution", () => {
     const rows = calculateUnitDistribution(participants);
     expect(rows.find((r) => r.unit === "PLN Pusat")?.count).toBe(2);
     expect(rows.find((r) => r.unit === "PLN Puslitbang")?.count).toBe(1);
+    expect(rows.reduce((s, r) => s + r.count, 0)).toBe(3);
+  });
+});
+
+describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
+  it("rolls up PLN Pusat's own divisions/regional offices, keeps real subsidiaries separate", () => {
+    expect(classifyPlnCompanyGroup("PLN Pusat")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("PLN Puslitbang")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("PLN UIP Sumbagsel")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("PLN Pusat Divisi Manajemen Konstruksi")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("PLN Indonesia Power")).toBe("PLN Indonesia Power");
+    expect(classifyPlnCompanyGroup("PLN Nusantara Power")).toBe("PLN Nusantara Power");
+    // "Services" must win over the plain "Nusantara Power" match -- it's a
+    // distinct subsidiary-of-a-subsidiary, not the same company.
+    expect(classifyPlnCompanyGroup("PLN Nusantara Power Services")).toBe("PLN Nusantara Power Services");
+    expect(classifyPlnCompanyGroup("PLN Enjiniring")).toBe("PLN Enjiniring");
+    expect(classifyPlnCompanyGroup("PLN Icon Plus")).toBe("PLN Icon Plus");
+    expect(classifyPlnCompanyGroup("PLN Batam")).toBe("PLN Batam");
+    expect(classifyPlnCompanyGroup("PLN Energi Primer Indonesia")).toBe("PLN Energi Primer Indonesia");
+  });
+
+  it("never matches a subsidiary name as a substring of something unrelated", () => {
+    // regression guard, same bug class as the "Sabrina" / "brin" false positive.
+    expect(classifyPlnCompanyGroup("Universitas Pertahanan RI")).not.toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("Windy Sabrina")).not.toBe("PLN Nusantara Power Services");
+  });
+
+  it("falls back to Lainnya/Eksternal for non-PLN entries, and keeps Tidak Teridentifikasi as its own bucket", () => {
+    expect(classifyPlnCompanyGroup("Universitas Pertahanan RI")).toBe("Lainnya / Eksternal");
+    expect(classifyPlnCompanyGroup("Tidak Teridentifikasi")).toBe("Tidak Teridentifikasi");
+    expect(classifyPlnCompanyGroup(null)).toBe("Tidak Teridentifikasi");
+  });
+
+  it("calculateCompanyGroupDistribution groups on the same zoom-valid basis as calculateUnitDistribution", () => {
+    const participants = [
+      makeParticipant({ unit: "PLN UIP Sumbagsel", attendance: { ...makeParticipant().attendance, zoomValidAttendee: true } }),
+      makeParticipant({ unit: "PLN Pusat", attendance: { ...makeParticipant().attendance, zoomValidAttendee: true } }),
+      makeParticipant({ unit: "PLN Indonesia Power", attendance: { ...makeParticipant().attendance, zoomValidAttendee: true } }),
+      makeParticipant({ unit: "PLN Indonesia Power", attendance: { ...makeParticipant().attendance, zoomValidAttendee: false } }),
+    ];
+    const rows = calculateCompanyGroupDistribution(participants);
+    expect(rows.find((r) => r.unit === "PLN Pusat")?.count).toBe(2);
+    expect(rows.find((r) => r.unit === "PLN Indonesia Power")?.count).toBe(1);
     expect(rows.reduce((s, r) => s + r.count, 0)).toBe(3);
   });
 });
