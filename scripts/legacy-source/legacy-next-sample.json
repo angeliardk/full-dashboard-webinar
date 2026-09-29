@@ -1,0 +1,3743 @@
+{
+ "metrics": {
+  "ringkasan": {
+   "totalHadirBersih": 411,
+   "w1HadirBersih": 204,
+   "w2HadirBersih": 207,
+   "dbGabungan": 802,
+   "totalPendaftar": 541,
+   "totalPre": 175,
+   "totalPost": 144,
+   "zoomAuditOld": 407
+  },
+  "w1": {
+   "hadirBersih": 204,
+   "pendaftar": 304,
+   "pre": 105,
+   "post": 73,
+   "zoomBruto": 212,
+   "pembicara": 2,
+   "ecadin": 5,
+   "asisten": 1,
+   "dbGabungan": 417,
+   "hadirRegistrasi": 95,
+   "hanyaZoom": 107,
+   "tidakTeridentifikasi": 38,
+   "pendaftarTakHadir": 192
+  },
+  "w2": {
+   "hadirBersih": 207,
+   "pendaftar": 254,
+   "pre": 70,
+   "post": 71,
+   "zoomBruto": 211,
+   "dbGabungan": 385,
+   "hadirRegistrasi": 91,
+   "hanyaZoom": 116,
+   "tidakTeridentifikasi": 46,
+   "pendaftarTakHadir": 181
+  }
+ },
+ "unitsHadir": [
+  {
+   "unit": "PLN Pusat",
+   "w1": 61,
+   "w2": 48,
+   "total": 109
+  },
+  {
+   "unit": "Tidak Teridentifikasi",
+   "w1": 38,
+   "w2": 46,
+   "total": 84
+  },
+  {
+   "unit": "PLN Puslitbang",
+   "w1": 7,
+   "w2": 4,
+   "total": 11
+  },
+  {
+   "unit": "PLN Pusat Manajemen Proyek",
+   "w1": 6,
+   "w2": 4,
+   "total": 10
+  },
+  {
+   "unit": "PLN UIP Jawa Bagian Timur dan Bali",
+   "w1": 8,
+   "w2": 1,
+   "total": 9
+  },
+  {
+   "unit": "PLN Nusantara Power",
+   "w1": 6,
+   "w2": 3,
+   "total": 9
+  },
+  {
+   "unit": "PLN UID S2JB",
+   "w1": 7,
+   "w2": 0,
+   "total": 7
+  },
+  {
+   "unit": "PLN Indonesia Power",
+   "w1": 3,
+   "w2": 3,
+   "total": 6
+  },
+  {
+   "unit": "PLN UIP3B Kalimantan",
+   "w1": 4,
+   "w2": 2,
+   "total": 6
+  },
+  {
+   "unit": "PLN UID Kalimantan Barat",
+   "w1": 2,
+   "w2": 3,
+   "total": 5
+  },
+  {
+   "unit": "PLN UIT Jawa Bagian Barat",
+   "w1": 1,
+   "w2": 4,
+   "total": 5
+  },
+  {
+   "unit": "PLN UIP Sumatera Bagian Tengah",
+   "w1": 3,
+   "w2": 2,
+   "total": 5
+  },
+  {
+   "unit": "PLN Pusdiklat",
+   "w1": 4,
+   "w2": 0,
+   "total": 4
+  },
+  {
+   "unit": "PLN UIP Sumatera Bagian Selatan",
+   "w1": 3,
+   "w2": 1,
+   "total": 4
+  },
+  {
+   "unit": "PLN UID Bali",
+   "w1": 2,
+   "w2": 2,
+   "total": 4
+  },
+  {
+   "unit": "PLN UID Jawa Barat",
+   "w1": 1,
+   "w2": 3,
+   "total": 4
+  },
+  {
+   "unit": "PLN UID Kalimantan Timur dan Utara",
+   "w1": 2,
+   "w2": 2,
+   "total": 4
+  },
+  {
+   "unit": "PLN UIT Jawa Bagian Tengah",
+   "w1": 1,
+   "w2": 3,
+   "total": 4
+  },
+  {
+   "unit": "PLN UIP Jawa Bagian Tengah",
+   "w1": 3,
+   "w2": 1,
+   "total": 4
+  },
+  {
+   "unit": "PLN UIP Nusa Tenggara",
+   "w1": 1,
+   "w2": 3,
+   "total": 4
+  },
+  {
+   "unit": "PLN UIP Kalimantan Bagian Barat",
+   "w1": 0,
+   "w2": 4,
+   "total": 4
+  },
+  {
+   "unit": "PLN UIK Dwipantara",
+   "w1": 0,
+   "w2": 3,
+   "total": 3
+  },
+  {
+   "unit": "PLN Pusertif",
+   "w1": 2,
+   "w2": 0,
+   "total": 2
+  },
+  {
+   "unit": "PLN UIP Sulawesi",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PLN UID Sumut",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PLN Indonesia Power UBP PNS",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PLN UPT Kendari",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PLN UP3 Belitung",
+   "w1": 2,
+   "w2": 0,
+   "total": 2
+  },
+  {
+   "unit": "PLN UIW MMU / PLN UP3 Masohi / PLN ULP Piru",
+   "w1": 2,
+   "w2": 0,
+   "total": 2
+  },
+  {
+   "unit": "PLN UIK Tanjung Jati B",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PLN UPDL Pandaan",
+   "w1": 2,
+   "w2": 0,
+   "total": 2
+  },
+  {
+   "unit": "PLN UID Kalselteng",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PLN HCBP A8",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PLN UPDL Banjarbaru",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PT Energy Management Indonesia",
+   "w1": 2,
+   "w2": 0,
+   "total": 2
+  },
+  {
+   "unit": "PLN UPP Nusra 3",
+   "w1": 1,
+   "w2": 1,
+   "total": 2
+  },
+  {
+   "unit": "PLN UIP Jawa Bagian Barat",
+   "w1": 0,
+   "w2": 2,
+   "total": 2
+  },
+  {
+   "unit": "PLN UP3 Bali Utara",
+   "w1": 0,
+   "w2": 2,
+   "total": 2
+  },
+  {
+   "unit": "PLN UPK Flores",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP2B Jawa Timur",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIW NTT",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN Pusat / PLN UIP2B Jamali / PLN UP2B Jawa Tengah dan DIY",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP Kalimantan Bagian Tengah",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIW Bangka Belitung",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Suluttenggo",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN Enjin Tragi",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPT Bali",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP Kalimantan Bagian Tengah / PLN UPP KLT 1",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPP MPA 4",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP2D Bali",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP Sumatera Bagian Selatan / PLN UPP SBS 2",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN MCTN",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN Nusantara Power UPKL",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP3B Kalimantan / PLN UPT Palangkaraya",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULTG Langsa",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULP Karebosi",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN Enjiniring",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULTG Gorontalo",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN Batam",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULP Kasongan / PLN UP3 Palangka Raya",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPDL Sub",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP2K Ss",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULP Kenten",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP Kalimantan Bagian Timur",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPDL Tuntungan",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPT Plgdg",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP3 Gorontalo",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPDL Suralaya",
+   "w1": 1,
+   "w2": 0,
+   "total": 1
+  },
+  {
+   "unit": "PLN Pusat Manajemen Proyek UPMK II",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN Pusat / PLN UID Sulselrabar / PLN UP3 Kendari",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Jakarta Raya",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP3B Sumatera",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPT Bengkulu",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN Indonesia Power UBP Barru",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN OPRS STI Sumkal",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Sulselrabar / PLN UP3 Bulukumba / PLN ULP Bantaeng",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP3 Bali Timur",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULP Tarakan",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN Nusantara Power UP Bandar Lampung",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPP Maluku Papua 4",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP Sumatera Bagian Tengah / PLN UPP SBT 2",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP2K Sulbar",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPP KLT 2",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULP Saketa",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP Jawa Bagian Timur dan Bali / PLN UPP JBTB 3",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN Pusat Manajemen Proyek UPMK III",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP2B Makassar",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Lampung",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIT Jawa Bagian Timur dan Bali",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPT Banda Aceh",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Jawa Timur",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN Nusa Daya",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Jawa Tengah / PLN UP2D Jawa Tengah",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP3B Sumatera / PLN UPT Palembang / PLN ULTG Bangka",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Sulselrabar",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP3 Subulussalam",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPP Sulawesi Tenggara",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULP Bantul",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPT Bac",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Yogyakarta",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULP Kayu Aro",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN ULP Kutoarjo",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UIP2B Jamali",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP3 Llg",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP3 Padang",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UP3 Palopo",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UPP JBTB 4",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  },
+  {
+   "unit": "PLN UID Aceh",
+   "w1": 0,
+   "w2": 1,
+   "total": 1
+  }
+ ],
+ "learning": {
+  "overall": {
+   "pre_n": 175,
+   "pre_avg": 83.2,
+   "post_n": 144,
+   "post_avg": 91.6,
+   "gain_n": 101,
+   "gain_avg": 10.1
+  },
+  "pairs": [
+   {
+    "pre": 80,
+    "post": 80,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 80,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 50,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 80,
+    "post": 50,
+    "w": "1"
+   },
+   {
+    "pre": 70,
+    "post": 90,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 90,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 90,
+    "w": "1"
+   },
+   {
+    "pre": 80,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 50,
+    "post": 70,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 90,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 70,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 70,
+    "post": 90,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 90,
+    "w": "1"
+   },
+   {
+    "pre": 70,
+    "post": 90,
+    "w": "1"
+   },
+   {
+    "pre": 90,
+    "post": 90,
+    "w": "1"
+   },
+   {
+    "pre": 80,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 70,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 60,
+    "post": 80,
+    "w": "1"
+   },
+   {
+    "pre": 80,
+    "post": 100,
+    "w": "1"
+   },
+   {
+    "pre": 80,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 87,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 73,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 60,
+    "post": 80,
+    "w": "2"
+   },
+   {
+    "pre": 53,
+    "post": 87,
+    "w": "2"
+   },
+   {
+    "pre": 87,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 53,
+    "post": 87,
+    "w": "2"
+   },
+   {
+    "pre": 80,
+    "post": 80,
+    "w": "2"
+   },
+   {
+    "pre": 93,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 93,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 60,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 60,
+    "post": 80,
+    "w": "2"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 67,
+    "post": 80,
+    "w": "2"
+   },
+   {
+    "pre": 93,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 60,
+    "post": 73,
+    "w": "2"
+   },
+   {
+    "pre": 80,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 80,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 73,
+    "post": 87,
+    "w": "2"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 67,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 93,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 67,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 87,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 73,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 93,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 80,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 53,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 80,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 87,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 93,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 60,
+    "post": 73,
+    "w": "2"
+   },
+   {
+    "pre": 93,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 87,
+    "post": 93,
+    "w": "2"
+   },
+   {
+    "pre": 87,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 47,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 67,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 80,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 80,
+    "post": 87,
+    "w": "2"
+   },
+   {
+    "pre": 100,
+    "post": 87,
+    "w": "2"
+   },
+   {
+    "pre": 67,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 40,
+    "post": 67,
+    "w": "2"
+   },
+   {
+    "pre": 80,
+    "post": 100,
+    "w": "2"
+   },
+   {
+    "pre": 100,
+    "post": 100,
+    "w": "2"
+   }
+  ],
+  "byWebinar": {
+   "1": {
+    "pre_n": 105,
+    "pre_avg": 87.4,
+    "post_n": 73,
+    "post_avg": 92.9,
+    "gain_n": 56,
+    "gain_avg": 5.9
+   },
+   "2": {
+    "pre_n": 70,
+    "pre_avg": 76.9,
+    "post_n": 71,
+    "post_avg": 90.4,
+    "gain_n": 45,
+    "gain_avg": 15.4
+   }
+  }
+ },
+ "feedback": {
+  "likert": [
+   {
+    "q": "Listrik Stabil",
+    "n": 71,
+    "avg": 4.49,
+    "grp": "Series 2"
+   },
+   {
+    "q": "Emisi Rendah",
+    "n": 71,
+    "avg": 4.45,
+    "grp": "Series 2"
+   },
+   {
+    "q": "Pemahaman Global Nuklir",
+    "n": 71,
+    "avg": 4.44,
+    "grp": "Series 2"
+   },
+   {
+    "q": "Keandalan Sistem",
+    "n": 71,
+    "avg": 4.41,
+    "grp": "Series 2"
+   },
+   {
+    "q": "Rencana Energi Nasional",
+    "n": 71,
+    "avg": 4.39,
+    "grp": "Series 2"
+   },
+   {
+    "q": "Materi Harapan",
+    "n": 144,
+    "avg": 4.33,
+    "grp": "Umum (kedua seri)"
+   },
+   {
+    "q": "Informasi Baru",
+    "n": 144,
+    "avg": 4.31,
+    "grp": "Umum (kedua seri)"
+   },
+   {
+    "q": "Relevansi Pekerjaan",
+    "n": 144,
+    "avg": 4.26,
+    "grp": "Umum (kedua seri)"
+   },
+   {
+    "q": "Nuklir Tidak Hanya Energi",
+    "n": 73,
+    "avg": 4.23,
+    "grp": "Series 1"
+   },
+   {
+    "q": "Peran Nuklir Harian",
+    "n": 73,
+    "avg": 4.22,
+    "grp": "Series 1"
+   },
+   {
+    "q": "Nuklir Medis",
+    "n": 73,
+    "avg": 4.22,
+    "grp": "Series 1"
+   },
+   {
+    "q": "Sejarah Nuklir",
+    "n": 73,
+    "avg": 4.21,
+    "grp": "Series 1"
+   },
+   {
+    "q": "Nuklir Riset",
+    "n": 73,
+    "avg": 4.21,
+    "grp": "Series 1"
+   },
+   {
+    "q": "Nuklir Pangan",
+    "n": 73,
+    "avg": 4.19,
+    "grp": "Series 1"
+   }
+  ],
+  "text": [
+   {
+    "q": "Saran Webinar",
+    "n": 133,
+    "samples": [
+     "Membahas secara teknis bagaimana mengoperasi dan memelihara PLTN",
+     "Saya ingin mengetahui tentang Nuklir, khusunya PLTN lebih banyak",
+     "lebih banyak materi tentang nuklir termasuk pembangunan pembangkit nuklir",
+     "cukup baik",
+     "Tambah memahami peran nuklir untuk kehidupan sehari2",
+     "Cukup baik"
+    ]
+   },
+   {
+    "q": "Saran Program",
+    "n": 130,
+    "samples": [
+     "Membahas secara teknis bagaimana mengoperasi dan memelihara PLTN",
+     "Saya ingin ini lebih diikuti oleh khalayak ramai tidak hanya insan PLN",
+     "materi dapat di share",
+     "sudah cukup baik",
+     "Keren",
+     "Sudha baik"
+    ]
+   }
+  ]
+ },
+ "hanyaZoom": {
+  "count": 223,
+  "list": [
+   {
+    "nama": "Ajeng Rahmadani",
+    "unit": "PLN Pusdiklat",
+    "durasi": 96,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Bayu agustrio",
+    "unit": "PLN UID S2JB",
+    "durasi": 90,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "eko hariyostanto",
+    "unit": "PLN Puslitbang",
+    "durasi": 83,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "I Made Gita Prawira",
+    "unit": "PLN UIP Kalimantan Bagian Tengah / PLN U",
+    "durasi": 87,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Juanawati Marpaung",
+    "unit": "PLN Pusat",
+    "durasi": 90,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "KRISNA AGUS SETIAWAN",
+    "unit": "PLN Puslitbang",
+    "durasi": 131,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "MEGANTARA VILANDA",
+    "unit": "PLN UP3 Belitung",
+    "durasi": 115,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Mira Liswarani",
+    "unit": "PLN UID S2JB",
+    "durasi": 103,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Rahmat Pakay",
+    "unit": "PLN UIW MMU / PLN UP3 Masohi / PLN ULP P",
+    "durasi": 93,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Yudhistira Arif Hidayat",
+    "unit": "PLN UPDL Pandaan",
+    "durasi": 98,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Achmad Suyudi Achmad Suyudi",
+    "unit": "PLN UIW MMU / PLN UP3 Masohi / PLN ULP P",
+    "durasi": 107,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ahmadfauzi D Hartono",
+    "unit": "PLN Pusat",
+    "durasi": 100,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ainanto Nindyo",
+    "unit": "PLN UIP Jawa Bagian Tengah",
+    "durasi": 129,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Aji",
+    "unit": "PLN UID Kalselteng",
+    "durasi": 117,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Albert Safaria",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 115,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Alboin S",
+    "unit": "PLN Pusat",
+    "durasi": 78,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Alfino",
+    "unit": "PLN Pusat",
+    "durasi": 97,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Amelia Oktafridayanti",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 33,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Andiek Tri",
+    "unit": "PLN Indonesia Power",
+    "durasi": 85,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Andik Dwi Handoko",
+    "unit": "PLN HCBP A8",
+    "durasi": 74,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Andry",
+    "unit": "PLN UPDL Banjarbaru",
+    "durasi": 96,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ardian R",
+    "unit": "PLN Pusat",
+    "durasi": 105,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Arianta",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 99,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Arif Gogon",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 79,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Arya",
+    "unit": "PLN UPDL Pandaan",
+    "durasi": 100,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Audit Investigasi",
+    "unit": "PLN Pusat",
+    "durasi": 55,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Bagus Dhaka",
+    "unit": "PLN Pusat",
+    "durasi": 102,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Bambang Mulyo Wiharso",
+    "unit": "PLN Pusat",
+    "durasi": 92,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Bambang S",
+    "unit": "PLN Pusat",
+    "durasi": 59,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Banar Sn",
+    "unit": "PLN Nusantara Power",
+    "durasi": 42,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Bot Sosani",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 84,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Btl Fathur",
+    "unit": "PLN ULP Kasongan / PLN UP3 Palangka Raya",
+    "durasi": 111,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Budhi Setyanto",
+    "unit": "PLN UPDL Sub",
+    "durasi": 62,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Dalpro",
+    "unit": "PLN UIP Sumatera Bagian Selatan",
+    "durasi": 41,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Dharmadianto 123",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 91,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Dhisty",
+    "unit": "PLN Pusat",
+    "durasi": 59,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ditya N",
+    "unit": "PLN UP2K Ss",
+    "durasi": 100,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Dody Hariyadi",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 36,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Edo Agung Edo Agung",
+    "unit": "PLN UIP Nusa Tenggara",
+    "durasi": 107,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Eduard Nugroho",
+    "unit": "PLN Pusat",
+    "durasi": 52,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Eka Purwathi",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 63,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Endah.M",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 104,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Evi Mediawati",
+    "unit": "PLN UID S2JB",
+    "durasi": 92,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Fazri",
+    "unit": "PLN UIP Sumatera Bagian Tengah",
+    "durasi": 32,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Fazri",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 34,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Febrian Aw",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 81,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Fransiska Satya Aw",
+    "unit": "PLN Pusat",
+    "durasi": 32,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Harris",
+    "unit": "PLN Pusat",
+    "durasi": 94,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Harry Indrawan-Pln",
+    "unit": "PLN Pusat",
+    "durasi": 56,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ikhsan Sandana Subtle Switchyard",
+    "unit": "PLN Pusat",
+    "durasi": 51,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Iman A",
+    "unit": "PLN ULP Kenten",
+    "durasi": 95,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ip Yudi Hidayat",
+    "unit": "PLN Indonesia Power",
+    "durasi": 101,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ismail Hartanto",
+    "unit": "PLN Pusat",
+    "durasi": 111,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Jaks",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 92,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Jhon",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 90,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Jokopitoyo",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 72,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Kgs Basir",
+    "unit": "PLN UID S2JB",
+    "durasi": 53,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Khrisna",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 107,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Lakdan",
+    "unit": "PLN UIP Jawa Bagian Timur dan Bali",
+    "durasi": 93,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Liana",
+    "unit": "PT Energy Management Indonesia",
+    "durasi": 90,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "M Nordiansyah",
+    "unit": "PLN Pusat",
+    "durasi": 109,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "M.Ardiansyah",
+    "unit": "PLN UIP Kalimantan Bagian Timur",
+    "durasi": 95,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "M.K Budi S",
+    "unit": "PT Energy Management Indonesia",
+    "durasi": 90,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Meiri",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 71,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Mimin Puslitbang",
+    "unit": "PLN UIP Jawa Bagian Tengah",
+    "durasi": 96,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Mp",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 560,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Nila Siswanti",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 63,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Nirwan",
+    "unit": "PLN Pusat",
+    "durasi": 102,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Nugroho",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 114,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Nugroho Budi S",
+    "unit": "PLN UIP Jawa Bagian Tengah",
+    "durasi": 106,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Nurindah Aristi",
+    "unit": "PLN UIP Sumatera Bagian Selatan",
+    "durasi": 84,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Nuris",
+    "unit": "PLN UPP Nusra 3",
+    "durasi": 43,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Nurulhuda",
+    "unit": "PLN UID S2JB",
+    "durasi": 47,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Oktavianus",
+    "unit": "PLN Pusat",
+    "durasi": 95,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Paris W P",
+    "unit": "PLN UPDL Tuntungan",
+    "durasi": 48,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Piska S. Bleskadit",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 34,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Pln ~ Ahmad Wendy",
+    "unit": "PLN Pusat",
+    "durasi": 80,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Pln Akhmad N",
+    "unit": "PLN Pusat",
+    "durasi": 105,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Pln S2Jb",
+    "unit": "PLN Pusat",
+    "durasi": 45,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Pln Uip Jbtb",
+    "unit": "PLN UIP Jawa Bagian Timur dan Bali",
+    "durasi": 52,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Plnsstb",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 101,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Pn Up B Lampung",
+    "unit": "PLN Pusat",
+    "durasi": 70,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Puslitbang Valensi",
+    "unit": "PLN Puslitbang",
+    "durasi": 107,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Pusmanpro",
+    "unit": "PLN Pusat Manajemen Proyek",
+    "durasi": 79,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ranto",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 109,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ratih Crysanthy",
+    "unit": "PLN Puslitbang",
+    "durasi": 86,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ren Uipsbt",
+    "unit": "PLN UIP Sumatera Bagian Tengah",
+    "durasi": 85,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Ria",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 88,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Rizal Pahlevi",
+    "unit": "PLN UPT Plgdg",
+    "durasi": 38,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Rizki Nur Pratama H",
+    "unit": "PLN UIP Sumatera Bagian Tengah",
+    "durasi": 116,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Rko",
+    "unit": "PLN Pusat",
+    "durasi": 66,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Sigit D A Perencanaan Up Gorontalo",
+    "unit": "PLN UP3 Gorontalo",
+    "durasi": 109,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Sodik",
+    "unit": "PLN UID Kalimantan Timur dan Utara",
+    "durasi": 101,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Sondang",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 84,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Syarifah Zaharah",
+    "unit": "PLN UID Kalimantan Barat",
+    "durasi": 80,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Tessa",
+    "unit": "PLN Pusat",
+    "durasi": 100,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Tidak Teridentifikasi (PLN)",
+    "unit": "PLN Pusat",
+    "durasi": 176,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Tidak Teridentifikasi (UP3)",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 172,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Tidak Teridentifikasi (PNP)",
+    "unit": "PLN Nusantara Power",
+    "durasi": 87,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Tri Hardimasyar",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 88,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Uip3B Kalimantan",
+    "unit": "PLN UIP3B Kalimantan",
+    "durasi": 31,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Up Belitung",
+    "unit": "PLN UP3 Belitung",
+    "durasi": 65,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Updl Suralaya",
+    "unit": "PLN UPDL Suralaya",
+    "durasi": 134,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Wuland",
+    "unit": "PLN UID S2JB",
+    "durasi": 117,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Yanita Riri",
+    "unit": "PLN Pusat",
+    "durasi": 74,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Zulfana",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 41,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Zulhendri Koto",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 98,
+    "webinar": "Series 1"
+   },
+   {
+    "nama": "Aldis Alfadjrin",
+    "unit": "PLN Pusat / PLN UID Sulselrabar / PLN UP",
+    "durasi": 64,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "DANDI ULUL ALBAB",
+    "unit": "PLN UID Sulselrabar / PLN UP3 Bulukumba ",
+    "durasi": 54,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Didi Kurniawan Abuhari",
+    "unit": "PLN UID Jawa Barat",
+    "durasi": 80,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Didik Fauzi Dakhlan",
+    "unit": "PLN Pusat",
+    "durasi": 94,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "DWI RAKHMAWATI ANGGRAINI",
+    "unit": "PLN UP3 Bali Timur",
+    "durasi": 66,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Faizal reza",
+    "unit": "PLN UIK Dwipantara",
+    "durasi": 71,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "falah ramadhan",
+    "unit": "PLN Nusantara Power",
+    "durasi": 58,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Fazri",
+    "unit": "PLN UIP Sumatera Bagian Tengah",
+    "durasi": 58,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "I PUTU ARYA KRISNATAMA",
+    "unit": "PLN UIK Dwipantara",
+    "durasi": 69,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Irfan Yoga Prastyawan",
+    "unit": "PLN UIP Kalimantan Bagian Barat",
+    "durasi": 86,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "JAKA ADIPRASETYA WIRAANTAKA",
+    "unit": "PLN UIP Sulawesi",
+    "durasi": 82,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Jefry",
+    "unit": "PLN UPP KLT 2",
+    "durasi": 68,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "lukman aman",
+    "unit": "PLN ULP Saketa",
+    "durasi": 77,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Meidhion arya winata",
+    "unit": "PLN Pusat Manajemen Proyek UPMK III",
+    "durasi": 67,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Mohamad Ridwan Islami",
+    "unit": "PLN UP3 Bali Utara",
+    "durasi": 60,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ranu Adi",
+    "unit": "PLN UID Jawa Timur",
+    "durasi": 88,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Riko hidayat",
+    "unit": "PLN Pusat",
+    "durasi": 72,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Rosisk Apribra",
+    "unit": "PLN UID Jawa Tengah / PLN UP2D Jawa Teng",
+    "durasi": 87,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Unggul Dzackiy Kurniawan",
+    "unit": "PLN UP3 Bali Utara",
+    "durasi": 91,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Zuhwan Asbah",
+    "unit": "PLN Pusat",
+    "durasi": 83,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Abdurrahman Fresky Matthew Gomat",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 86,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ade Hendri Alfino",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 35,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Afranisa",
+    "unit": "PLN Pusat",
+    "durasi": 79,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Afrianto Budi",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 69,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Afthon",
+    "unit": "PLN UPP Nusra 3",
+    "durasi": 69,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ahmadfauzi D Hartono",
+    "unit": "PLN Pusat",
+    "durasi": 83,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Aji",
+    "unit": "PLN UID Kalselteng",
+    "durasi": 56,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Amerikanuddin",
+    "unit": "PLN Pusat",
+    "durasi": 72,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Anang",
+    "unit": "PLN Pusat",
+    "durasi": 48,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Andik Dwi Handoko",
+    "unit": "PLN HCBP A8",
+    "durasi": 85,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Andry",
+    "unit": "PLN UPDL Banjarbaru",
+    "durasi": 133,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Annisa Istikawati Anwar",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 81,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ardian R",
+    "unit": "PLN Pusat",
+    "durasi": 84,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Arief",
+    "unit": "PLN Pusat",
+    "durasi": 64,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Asep Akbar Azhari Asep Akbar Azhari",
+    "unit": "PLN Pusat Manajemen Proyek",
+    "durasi": 96,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Bagaskoro",
+    "unit": "PLN Pusat",
+    "durasi": 94,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Bambang Setiaji",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 78,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Basri Hadi",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 35,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "D. Bagus W",
+    "unit": "PLN Pusat",
+    "durasi": 107,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Dewi Nadya",
+    "unit": "PLN Pusat",
+    "durasi": 69,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Dhito",
+    "unit": "PLN UIP Jawa Bagian Barat",
+    "durasi": 43,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Doddy",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 33,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Donny M",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 85,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Dwi R. Sulaeman",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 87,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ebert Suryadi Sinaga",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 86,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Eko",
+    "unit": "PLN UIT Jawa Bagian Tengah",
+    "durasi": 99,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Eko Purwanto Eko Purwanto",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 82,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Emha",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 32,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Fauzan Adhi",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 72,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ferdial Rafli",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 64,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Franciscus Xaverius Ryan Kurniawan",
+    "unit": "PLN UID Jawa Barat",
+    "durasi": 70,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Fransiska Satya Aw",
+    "unit": "PLN Pusat",
+    "durasi": 73,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Gale Arnes",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 79,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Hansen Sianipar",
+    "unit": "PLN Pusat",
+    "durasi": 84,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Haris Harmoko",
+    "unit": "PLN Pusat",
+    "durasi": 63,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Helmi",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 82,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Heru",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 53,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Hestu",
+    "unit": "PLN ULP Bantul",
+    "durasi": 86,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Hidayat",
+    "unit": "PLN Pusat",
+    "durasi": 69,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Host Puslitbang",
+    "unit": "PLN Puslitbang",
+    "durasi": 88,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Husni Putra",
+    "unit": "PLN UPT Bac",
+    "durasi": 49,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "I Made Wahyu Bimantara",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 69,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ibnu Rafi Farabi",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 62,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Indriana",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 68,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Jf",
+    "unit": "PLN UID Yogyakarta",
+    "durasi": 36,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Jokomuslim",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 67,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Kayu Aro",
+    "unit": "PLN ULP Kayu Aro",
+    "durasi": 172,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Kharisma Utomo",
+    "unit": "PLN Pusat",
+    "durasi": 52,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Kharisma Utomo M Iphone",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 44,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Khusnul",
+    "unit": "PLN UPT Kendari",
+    "durasi": 40,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Komaruddin Komaruddin",
+    "unit": "PLN ULP Kutoarjo",
+    "durasi": 70,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Kunto",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 94,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Kurniawan Fajrin",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 61,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Lia Frisila",
+    "unit": "PLN UIT Jawa Bagian Barat",
+    "durasi": 72,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Linda Rosalina P",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 129,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "M Indra F",
+    "unit": "PLN UIP Kalimantan Bagian Barat",
+    "durasi": 58,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "M Reza A",
+    "unit": "PLN Pusat",
+    "durasi": 91,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Maulana Satriodi",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 56,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Mira Liswarani",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 69,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Moko",
+    "unit": "PLN UIP2B Jamali",
+    "durasi": 63,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Muhammad Syarif Hidayatullah",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 35,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Nanangfr",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 67,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Niaga",
+    "unit": "PLN UID Jawa Barat",
+    "durasi": 82,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Nirwan",
+    "unit": "PLN Pusat",
+    "durasi": 94,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Nurul Firda",
+    "unit": "PLN Puslitbang",
+    "durasi": 71,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Oktavianus",
+    "unit": "PLN Pusat",
+    "durasi": 88,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Plnsstb",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 65,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Prima Ra",
+    "unit": "PLN Pusat",
+    "durasi": 36,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Puslitbang Valensi",
+    "unit": "PLN Puslitbang",
+    "durasi": 64,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "R. Gurning",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 88,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Raden Yusuf Dwi Atmojo",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 59,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Randy R",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 79,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ranto",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 88,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ratna Zy",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 35,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Rentiana A",
+    "unit": "PLN UP3 Llg",
+    "durasi": 64,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ricky Andrian",
+    "unit": "PLN Pusat",
+    "durasi": 83,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Riri",
+    "unit": "PLN Pusat",
+    "durasi": 92,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Risman",
+    "unit": "PLN Pusat",
+    "durasi": 63,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Rizki Nur Pratama H",
+    "unit": "PLN UIP Sumatera Bagian Tengah",
+    "durasi": 49,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Rizky Rahma Putra",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 92,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Stevanus Kristo Stevanus Kristo",
+    "unit": "PLN UID Sumut",
+    "durasi": 85,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Sucipto Nugroho",
+    "unit": "PLN Pusat",
+    "durasi": 71,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Syafii Syafii",
+    "unit": "PLN UP3 Padang",
+    "durasi": 84,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Tel",
+    "unit": "PLN UP3 Palopo",
+    "durasi": 74,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Tigor Y",
+    "unit": "PLN UIP Kalimantan Bagian Barat",
+    "durasi": 52,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Ulil Amrie Za",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 86,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Upbrs Bakri",
+    "unit": "PLN Nusantara Power",
+    "durasi": 90,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Upbw",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 69,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Upmk Ii",
+    "unit": "PLN Pusat",
+    "durasi": 94,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Wahyu",
+    "unit": "PLN UPP JBTB 4",
+    "durasi": 36,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Wahyu Maulana Wahyu Maulana",
+    "unit": "PLN Pusat",
+    "durasi": 83,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Wahyuns",
+    "unit": "PLN Pusat",
+    "durasi": 76,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Widi",
+    "unit": "PLN Pusat",
+    "durasi": 79,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Wiwid.Ari",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 89,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Yandrison Yandrison",
+    "unit": "PLN UID Aceh",
+    "durasi": 97,
+    "webinar": "Series 2"
+   },
+   {
+    "nama": "Yopie Syam",
+    "unit": "Tidak Teridentifikasi",
+    "durasi": 74,
+    "webinar": "Series 2"
+   }
+  ]
+ },
+ "jabatanDict": [
+  {
+   "raw": null,
+   "count": 209,
+   "unit": "PLN UIW MMU / PLN UP3 Masohi / PLN ULP Piru",
+   "full": ""
+  },
+  {
+   "raw": "Manager",
+   "count": 6,
+   "unit": "PLN Pusat Manajemen Proyek",
+   "full": ""
+  },
+  {
+   "raw": "SOF",
+   "count": 6,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Officer",
+   "count": 5,
+   "unit": "PLN UID Suluttenggo",
+   "full": ""
+  },
+  {
+   "raw": "STC",
+   "count": 4,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Senior Officer",
+   "count": 3,
+   "unit": "PLN UID Kalimantan Barat",
+   "full": ""
+  },
+  {
+   "raw": "Manager Umum",
+   "count": 2,
+   "unit": "PLN UIP Sumatera Bagian Selatan",
+   "full": ""
+  },
+  {
+   "raw": "S",
+   "count": 2,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Senior Officer Aset, Properti, Komunikasi dan Umum",
+   "count": 2,
+   "unit": "PLN Puslitbang",
+   "full": ""
+  },
+  {
+   "raw": "TC Rensis Sulmapana",
+   "count": 2,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "sof",
+   "count": 2,
+   "unit": "PLN Puslitbang",
+   "full": ""
+  },
+  {
+   "raw": "OFFICER EFISIENSI",
+   "count": 2,
+   "unit": "PLN Indonesia Power UBP PNS",
+   "full": ""
+  },
+  {
+   "raw": "MSB Perencanaan Sistem Distribusi",
+   "count": 2,
+   "unit": "PLN UID Bali",
+   "full": ""
+  },
+  {
+   "raw": "Manajer Perencanaan Pengusahaan",
+   "count": 2,
+   "unit": "PLN UIP3B Kalimantan",
+   "full": ""
+  },
+  {
+   "raw": "SOF Renus & Kinerja",
+   "count": 2,
+   "unit": "PLN UIP3B Kalimantan",
+   "full": ""
+  },
+  {
+   "raw": "MULTG",
+   "count": 2,
+   "unit": "PLN ULTG Langsa",
+   "full": ""
+  },
+  {
+   "raw": "Supervisor Atas",
+   "count": 2,
+   "unit": "PLN UID Kalimantan Timur dan Utara",
+   "full": ""
+  },
+  {
+   "raw": "MSB Rensis",
+   "count": 2,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "STC OP HAR GI KSMPN",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Technician Perencanaan dan Pengendalian Jasa O&M (PLTU Ropa)",
+   "count": 1,
+   "unit": "PLN UPK Flores",
+   "full": ""
+  },
+  {
+   "raw": "SOF Kinerja dan Anggaran",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "TC Komisioning Sis Kit",
+   "count": 1,
+   "unit": "PLN Pusertif",
+   "full": ""
+  },
+  {
+   "raw": "Manager Sub Bidang PPPS",
+   "count": 1,
+   "unit": "PLN Pusdiklat",
+   "full": ""
+  },
+  {
+   "raw": "SOF PERENCANAAN",
+   "count": 1,
+   "unit": "PLN UP2B Jawa Timur",
+   "full": ""
+  },
+  {
+   "raw": "SOF PAT MAN",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek",
+   "full": ""
+  },
+  {
+   "raw": "SOF REN SIS DIST",
+   "count": 1,
+   "unit": "PLN UIW NTT",
+   "full": ""
+  },
+  {
+   "raw": "Vice President Strategi Pengembangan Sistem Rantai Pasok",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Senior Officer Manajemen Stakeholders PLTN",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "MAN OPRS STI SUMSEL",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "SOF KIN",
+   "count": 1,
+   "unit": "PLN Pusat / PLN UIP2B Jamali / PLN UP2B Jawa Tengah dan DIY",
+   "full": ""
+  },
+  {
+   "raw": "Officer kinerja",
+   "count": 1,
+   "unit": "PLN UID S2JB",
+   "full": ""
+  },
+  {
+   "raw": "Manager Audit Inv 2B",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Manager Kbj dan Str MR",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "VP IPP & Kemitraan",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "SOF Risiko Kebijakan Regulasi",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "spc",
+   "count": 1,
+   "unit": "PLN Pusdiklat",
+   "full": ""
+  },
+  {
+   "raw": "VP",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "ASMAN MK RING",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek",
+   "full": ""
+  },
+  {
+   "raw": "OF PERENCANAAN SIPIL",
+   "count": 1,
+   "unit": "PLN UIP Sulawesi",
+   "full": ""
+  },
+  {
+   "raw": "OF Rensislis",
+   "count": 1,
+   "unit": "PLN UID Sumut",
+   "full": ""
+  },
+  {
+   "raw": "Senior OFc | SOF",
+   "count": 1,
+   "unit": "PLN Pusdiklat",
+   "full": ""
+  },
+  {
+   "raw": "OF LOG DAN BEA",
+   "count": 1,
+   "unit": "PLN UIP Kalimantan Bagian Tengah",
+   "full": ""
+  },
+  {
+   "raw": "Senior Officer Regulasi dan Kebijakan",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "OFFICER HCBP",
+   "count": 1,
+   "unit": "PLN UIW Bangka Belitung",
+   "full": ""
+  },
+  {
+   "raw": "MSB",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Manager Operation",
+   "count": 1,
+   "unit": "PLN Nusantara Power",
+   "full": ""
+  },
+  {
+   "raw": "TC KONSTRUKSI",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Senior Officer Pengelolaan Inovasi dan Pengembangan Produk",
+   "count": 1,
+   "unit": "PLN Puslitbang",
+   "full": ""
+  },
+  {
+   "raw": "TC Manajemen aset | TC Manajemen Aset Transmisi",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "VICE PRESIDENT TECHNOLOGY DEVELOPMENT",
+   "count": 1,
+   "unit": "PLN Indonesia Power",
+   "full": ""
+  },
+  {
+   "raw": "SENIOR TEKNISI PENGELOLAAN PENGUJIAN PRODUK TEGANGAN DAN ARUS TINGGI",
+   "count": 1,
+   "unit": "PLN Pusertif",
+   "full": ""
+  },
+  {
+   "raw": "Asman K3 dan Keamanan",
+   "count": 1,
+   "unit": "PLN UIP3B Kalimantan",
+   "full": ""
+  },
+  {
+   "raw": "MAN ENJIN TRAGI",
+   "count": 1,
+   "unit": "PLN Enjin Tragi",
+   "full": ""
+  },
+  {
+   "raw": "GM",
+   "count": 1,
+   "unit": "PLN UIT Jawa Bagian Barat",
+   "full": ""
+  },
+  {
+   "raw": "TL K3KAM",
+   "count": 1,
+   "unit": "PLN UPT Bali",
+   "full": ""
+  },
+  {
+   "raw": "Manajer",
+   "count": 1,
+   "unit": "PLN UIP Kalimantan Bagian Tengah / PLN UPP KLT 1",
+   "full": ""
+  },
+  {
+   "raw": "Junior Technician Pengendalian Konstruksi",
+   "count": 1,
+   "unit": "PLN UPP MPA 4",
+   "full": ""
+  },
+  {
+   "raw": "OFFICER LOGISTIK",
+   "count": 1,
+   "unit": "PLN UID Bali",
+   "full": ""
+  },
+  {
+   "raw": "Manager SDU Regional 2B",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Manajer Konsultansi 2B",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Asman Fasop",
+   "count": 1,
+   "unit": "PLN UP2D Bali",
+   "full": ""
+  },
+  {
+   "raw": "JT Dalkons",
+   "count": 1,
+   "unit": "PLN UIP Sumatera Bagian Selatan / PLN UPP SBS 2",
+   "full": ""
+  },
+  {
+   "raw": "OF Pendanaan dan Hibah Dalam Negeri",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "PTB",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "MUPT",
+   "count": 1,
+   "unit": "PLN UPT Kendari",
+   "full": ""
+  },
+  {
+   "raw": "Manager Aset Properti, Komunikasi dan Umum",
+   "count": 1,
+   "unit": "PLN Puslitbang",
+   "full": ""
+  },
+  {
+   "raw": "MILEA",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Manager Konsultansi Audit 3A",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Team leader operasi",
+   "count": 1,
+   "unit": "PLN MCTN",
+   "full": ""
+  },
+  {
+   "raw": "MANAGER UP3",
+   "count": 1,
+   "unit": "PLN UP3 Belitung",
+   "full": ""
+  },
+  {
+   "raw": "TC QAQC Jaringan",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek",
+   "full": ""
+  },
+  {
+   "raw": "SOF RENUS & KIN",
+   "count": 1,
+   "unit": "PLN UID S2JB",
+   "full": ""
+  },
+  {
+   "raw": "MSB Rendan MT",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Pegawai tugas belajar",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Man Digfor",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "SoF",
+   "count": 1,
+   "unit": "PLN Nusantara Power UPKL",
+   "full": ""
+  },
+  {
+   "raw": "JOF DAL KONS",
+   "count": 1,
+   "unit": "PLN UIP3B Kalimantan / PLN UPT Palangkaraya",
+   "full": ""
+  },
+  {
+   "raw": "SPC KIN PERUSAHAAN",
+   "count": 1,
+   "unit": "PLN UID Jawa Barat",
+   "full": ""
+  },
+  {
+   "raw": "MM",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "STC QA QC Jaringan",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek",
+   "full": ""
+  },
+  {
+   "raw": "SENIOR OFFICER",
+   "count": 1,
+   "unit": "PLN UIP Jawa Bagian Timur dan Bali",
+   "full": ""
+  },
+  {
+   "raw": "Specialist Layanan Risiko Transisi Energi",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "TEAM LEADER K3L & KAM",
+   "count": 1,
+   "unit": "PLN UIW MMU / PLN UP3 Masohi / PLN ULP Piru",
+   "full": ""
+  },
+  {
+   "raw": "Manager ULP",
+   "count": 1,
+   "unit": "PLN ULP Karebosi",
+   "full": ""
+  },
+  {
+   "raw": "Senior Enjinir Elektrikal",
+   "count": 1,
+   "unit": "PLN Enjiniring",
+   "full": ""
+  },
+  {
+   "raw": "AMN K3 dan Keamanan",
+   "count": 1,
+   "unit": "PLN UIP Jawa Bagian Timur dan Bali",
+   "full": ""
+  },
+  {
+   "raw": "Manager Pemeliharaan dan Outage",
+   "count": 1,
+   "unit": "PLN UIK Tanjung Jati B",
+   "full": ""
+  },
+  {
+   "raw": "Asesmen",
+   "count": 1,
+   "unit": "PLN UIT Jawa Bagian Tengah",
+   "full": ""
+  },
+  {
+   "raw": "OF BANG MODEL PROYEKSI KEUANGAN",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Officer Pengembangan, Izin, dan Lahan Aneka EBT",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "TL HAR PMO TRAGI",
+   "count": 1,
+   "unit": "PLN ULTG Gorontalo",
+   "full": ""
+  },
+  {
+   "raw": "SRM KKU",
+   "count": 1,
+   "unit": "PLN UID S2JB",
+   "full": ""
+  },
+  {
+   "raw": "Asset Management",
+   "count": 1,
+   "unit": "PLN Batam",
+   "full": ""
+  },
+  {
+   "raw": "Officer Penyelenggaraan Pembelajaran",
+   "count": 1,
+   "unit": "PLN UPDL Pandaan",
+   "full": ""
+  },
+  {
+   "raw": "SOF Akuntansi",
+   "count": 1,
+   "unit": "PLN UIP Jawa Bagian Timur dan Bali",
+   "full": ""
+  },
+  {
+   "raw": "SOF Perencanaan Strategis Distribusi",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Manager | ManagerPembangkit IPP",
+   "count": 1,
+   "unit": "PLN UIK Dwipantara",
+   "full": ""
+  },
+  {
+   "raw": "Senior Officer Vendor Management",
+   "count": 1,
+   "unit": "PLN Indonesia Power",
+   "full": ""
+  },
+  {
+   "raw": "MANAGER UPMK II",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek UPMK II",
+   "full": ""
+  },
+  {
+   "raw": "TL LOGISTIK",
+   "count": 1,
+   "unit": "PLN Pusat / PLN UID Sulselrabar / PLN UP3 Kendari",
+   "full": ""
+  },
+  {
+   "raw": "SOF Lola ESG dan Safeguard",
+   "count": 1,
+   "unit": "PLN UID Jakarta Raya",
+   "full": ""
+  },
+  {
+   "raw": "Manager Enjiniring",
+   "count": 1,
+   "unit": "PLN UIT Jawa Bagian Barat",
+   "full": ""
+  },
+  {
+   "raw": "Specialist Kinerja Perencanaan",
+   "count": 1,
+   "unit": "PLN UIP3B Sumatera",
+   "full": ""
+  },
+  {
+   "raw": "TL ADM DAN MUM",
+   "count": 1,
+   "unit": "PLN UPT Bengkulu",
+   "full": ""
+  },
+  {
+   "raw": "Asisten Manajer Operasi",
+   "count": 1,
+   "unit": "PLN Indonesia Power UBP Barru",
+   "full": ""
+  },
+  {
+   "raw": "TC Manajemen Konstruksi Pembangkit",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek",
+   "full": ""
+  },
+  {
+   "raw": "SOF Management Stakeholders Pengembangan Infrastruktur PLTN",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "STAFF",
+   "count": 1,
+   "unit": "PLN UID Kalimantan Barat",
+   "full": ""
+  },
+  {
+   "raw": "Manager OPRS STI SUMSEL",
+   "count": 1,
+   "unit": "PLN OPRS STI Sumkal",
+   "full": ""
+  },
+  {
+   "raw": "SO pengembangan Infra PLTN",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "STC OP PROY RING",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek",
+   "full": ""
+  },
+  {
+   "raw": "TEAM LEADER",
+   "count": 1,
+   "unit": "PLN UID Sulselrabar / PLN UP3 Bulukumba / PLN ULP Bantaeng",
+   "full": ""
+  },
+  {
+   "raw": "Msb sipi reg 2",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "JX OP SIS",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "SOF Pengelolaan ESG and Safeguard",
+   "count": 1,
+   "unit": "PLN UIP Jawa Bagian Barat",
+   "full": ""
+  },
+  {
+   "raw": "Spc PAT GM",
+   "count": 1,
+   "unit": "PLN UID Jawa Barat",
+   "full": ""
+  },
+  {
+   "raw": "EVP",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "ASMAN KEUANGAN DAN UMUM",
+   "count": 1,
+   "unit": "PLN UP3 Bali Timur",
+   "full": ""
+  },
+  {
+   "raw": "Senior Technician",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "AMN Sewa Kalimantan",
+   "count": 1,
+   "unit": "PLN UIK Dwipantara",
+   "full": ""
+  },
+  {
+   "raw": "Unit Pembangkit",
+   "count": 1,
+   "unit": "PLN Nusantara Power",
+   "full": ""
+  },
+  {
+   "raw": "SPC PAT GM",
+   "count": 1,
+   "unit": "PLN UIT Jawa Bagian Tengah",
+   "full": ""
+  },
+  {
+   "raw": "AMN DALKONRISK 1",
+   "count": 1,
+   "unit": "PLN UIP Sumatera Bagian Tengah",
+   "full": ""
+  },
+  {
+   "raw": "Asman Perencanaan",
+   "count": 1,
+   "unit": "PLN UID Kalimantan Barat",
+   "full": ""
+  },
+  {
+   "raw": "MULP",
+   "count": 1,
+   "unit": "PLN ULP Tarakan",
+   "full": ""
+  },
+  {
+   "raw": "Officer Administrasi Dan Umum",
+   "count": 1,
+   "unit": "PLN UID Kalimantan Barat",
+   "full": ""
+  },
+  {
+   "raw": "OF K3K",
+   "count": 1,
+   "unit": "PLN Nusantara Power UP Bandar Lampung",
+   "full": ""
+  },
+  {
+   "raw": "MAN ENJ TRAGI",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Technician",
+   "count": 1,
+   "unit": "PLN UIK Dwipantara",
+   "full": ""
+  },
+  {
+   "raw": "JTC DALKONS",
+   "count": 1,
+   "unit": "PLN UPP Maluku Papua 4",
+   "full": ""
+  },
+  {
+   "raw": "Manager Pengelolaan Klaim Asuransi",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "manager",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Officer Pengendalian Konstruksi",
+   "count": 1,
+   "unit": "PLN UIP Kalimantan Bagian Barat",
+   "full": ""
+  },
+  {
+   "raw": "MANAGER",
+   "count": 1,
+   "unit": "PLN UIP Sumatera Bagian Tengah / PLN UPP SBT 2",
+   "full": ""
+  },
+  {
+   "raw": "Manager UP2K",
+   "count": 1,
+   "unit": "PLN UP2K Sulbar",
+   "full": ""
+  },
+  {
+   "raw": "TL K3L & KAM UPP SULTENG",
+   "count": 1,
+   "unit": "PLN UIP Sulawesi",
+   "full": ""
+  },
+  {
+   "raw": "STC Bio",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "-",
+   "count": 1,
+   "unit": "PLN UPP KLT 2",
+   "full": ""
+  },
+  {
+   "raw": "OF PERIZINAN",
+   "count": 1,
+   "unit": "PLN UIP Nusa Tenggara",
+   "full": ""
+  },
+  {
+   "raw": "Officer Perizinan",
+   "count": 1,
+   "unit": "PLN UIP Nusa Tenggara",
+   "full": ""
+  },
+  {
+   "raw": "Senior Manager Operasi Konstruksi",
+   "count": 1,
+   "unit": "PLN UIP Jawa Bagian Timur dan Bali",
+   "full": ""
+  },
+  {
+   "raw": "TL",
+   "count": 1,
+   "unit": "PLN ULP Saketa",
+   "full": ""
+  },
+  {
+   "raw": "Officer Pengendalian Proyek",
+   "count": 1,
+   "unit": "PLN UIP Jawa Bagian Timur dan Bali / PLN UPP JBTB 3",
+   "full": ""
+  },
+  {
+   "raw": "SOFPATMAN",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek UPMK III",
+   "full": ""
+  },
+  {
+   "raw": "Technician Fasilitas Operasi",
+   "count": 1,
+   "unit": "PLN UP2B Makassar",
+   "full": ""
+  },
+  {
+   "raw": "SM KAU",
+   "count": 1,
+   "unit": "PLN UIP Jawa Bagian Tengah",
+   "full": ""
+  },
+  {
+   "raw": "OF",
+   "count": 1,
+   "unit": "PLN Indonesia Power",
+   "full": ""
+  },
+  {
+   "raw": "SRM",
+   "count": 1,
+   "unit": "PLN UID Lampung",
+   "full": ""
+  },
+  {
+   "raw": "Manager Perizinan dan Komunikasi",
+   "count": 1,
+   "unit": "PLN UIP Kalimantan Bagian Barat",
+   "full": ""
+  },
+  {
+   "raw": "MULTG Karet",
+   "count": 1,
+   "unit": "PLN UIT Jawa Bagian Barat",
+   "full": ""
+  },
+  {
+   "raw": "Team Leader Operasi",
+   "count": 1,
+   "unit": "PLN UP3 Bali Utara",
+   "full": ""
+  },
+  {
+   "raw": "SRM Distribusi",
+   "count": 1,
+   "unit": "PLN UID Bali",
+   "full": ""
+  },
+  {
+   "raw": "MAN MRO & KPT",
+   "count": 1,
+   "unit": "PLN UIT Jawa Bagian Timur dan Bali",
+   "full": ""
+  },
+  {
+   "raw": "TC MK JARINGAN",
+   "count": 1,
+   "unit": "PLN Pusat Manajemen Proyek",
+   "full": ""
+  },
+  {
+   "raw": "SOF RESNTRA",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Senior Officer Perencanaan Sistem Kelistrikan",
+   "count": 1,
+   "unit": "PLN UID Jawa Timur",
+   "full": ""
+  },
+  {
+   "raw": "SF Pengembangan Model",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "OF MRO KPT",
+   "count": 1,
+   "unit": "PLN UIT Jawa Bagian Tengah",
+   "full": ""
+  },
+  {
+   "raw": "SPECIALIST",
+   "count": 1,
+   "unit": "PLN Nusa Daya",
+   "full": ""
+  },
+  {
+   "raw": "Team Leader SCADA & Telekomunikasi",
+   "count": 1,
+   "unit": "PLN UID Jawa Tengah / PLN UP2D Jawa Tengah",
+   "full": ""
+  },
+  {
+   "raw": "TC Transisi Energi",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Manager Perencanaan dan Pengendalian Pemeliharaan dan Outage",
+   "count": 1,
+   "unit": "PLN UIK Tanjung Jati B",
+   "full": ""
+  },
+  {
+   "raw": "Manager ULTG Bangka",
+   "count": 1,
+   "unit": "PLN UIP3B Sumatera / PLN UPT Palembang / PLN ULTG Bangka",
+   "full": ""
+  },
+  {
+   "raw": "Team Leader",
+   "count": 1,
+   "unit": "PLN UP3 Bali Utara",
+   "full": ""
+  },
+  {
+   "raw": "STC Proteksi Sistem",
+   "count": 1,
+   "unit": "PLN Pusat",
+   "full": ""
+  },
+  {
+   "raw": "Senior Officer Perencana",
+   "count": 1,
+   "unit": "PLN UID Sulselrabar",
+   "full": ""
+  },
+  {
+   "raw": "MUP",
+   "count": 1,
+   "unit": "PLN UP3 Subulussalam",
+   "full": ""
+  },
+  {
+   "raw": "OFFICER PENGENDALIAN PROYEK",
+   "count": 1,
+   "unit": "PLN UPP Sulawesi Tenggara",
+   "full": ""
+  }
+ ],
+ "rules": [
+  {
+   "area": "Basis utama"
+  },
+  {
+   "area": "Angka verified",
+   "rule": "Hadir bersih W1=204, W2=207 (total 411) adalah hasil verifikasi manual. Kolom Zoom otomatis di file memberi 212/195 (407); selisihnya dibersihkan manual dan dapat disesuaikan via Mode Edit."
+  },
+  {
+   "area": "Database gabungan",
+   "rule": "802 (W1 417 + W2 385) = orang unik dari salah satu sumber: registrasi, pre, post/feedback, atau Zoom. Dipakai sebagai audit data, BUKAN angka kehadiran."
+  },
+  {
+   "area": "Aktivitas form",
+   "rule": "Pendaftar, pre-test, dan post-test adalah aktivitas form — tidak otomatis berarti hadir Zoom."
+  },
+  {
+   "area": "Demografi",
+   "rule": "Chart demografi unit dihitung dari peserta Zoom>30 di file. Total idealnya menyamai hadir bersih; selisih kecil dapat dirapikan lewat tabel unit yang dapat diedit."
+  },
+  {
+   "area": "Tidak Teridentifikasi",
+   "rule": "Peserta Zoom valid yang nama-nya tidak bisa dimatch ke registrasi/unit (mis. hanya nama panggilan, tanpa unit, tidak ikut format instansi_nama). Tetap dihitung hadir."
+  }
+ ]
+}

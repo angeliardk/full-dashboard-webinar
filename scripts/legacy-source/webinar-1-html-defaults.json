@@ -1,0 +1,1211 @@
+{
+  "meta": {
+    "title": "Webinar 1 — \"Nuklir Lebih Dekat dari yang Kita Bayangkan\"",
+    "subtitle": "Seri internal \"Literasi Nuklir untuk Masa Depan Rendah Karbon\". Seluruh angka dihitung setelah pembersihan data (penghapusan entri uji coba & attempt duplikat).",
+    "date": "Kamis, 11 Juni 2026 · 13.30–14.45 WIB",
+    "source": "Series_Webinar_Nuclear_PLN.xlsx",
+    "population": 51000,
+    "attendees": 288,
+    "preCount": 104,
+    "postCount": 71,
+    "feedbackCount": 71,
+    "pairs": 55
+  },
+  "cleaning": {
+    "kehadiranRaw": 307,
+    "kehadiranValid": 288,
+    "preRaw": 115,
+    "preValid": 104,
+    "postRaw": 76,
+    "postValid": 71
+  },
+  "learning": {
+    "preMean": 87.64,
+    "postMean": 94.73,
+    "improved": 21,
+    "same": 33,
+    "declined": 1,
+    "ceilingPre100": 27,
+    "ceilingLt100": 28,
+    "ceilingLt100Improved": 21,
+    "preMin": 50,
+    "postMin": 70
+  },
+  "preDist": [
+    {
+      "s": 0,
+      "n": 1
+    },
+    {
+      "s": 10,
+      "n": 1
+    },
+    {
+      "s": 20,
+      "n": 1
+    },
+    {
+      "s": 30,
+      "n": 1
+    },
+    {
+      "s": 40,
+      "n": 1
+    },
+    {
+      "s": 50,
+      "n": 3
+    },
+    {
+      "s": 60,
+      "n": 3
+    },
+    {
+      "s": 70,
+      "n": 15
+    },
+    {
+      "s": 80,
+      "n": 15
+    },
+    {
+      "s": 90,
+      "n": 21
+    },
+    {
+      "s": 100,
+      "n": 42
+    }
+  ],
+  "postDist": [
+    {
+      "s": 0,
+      "n": 1
+    },
+    {
+      "s": 40,
+      "n": 2
+    },
+    {
+      "s": 50,
+      "n": 1
+    },
+    {
+      "s": 70,
+      "n": 2
+    },
+    {
+      "s": 80,
+      "n": 3
+    },
+    {
+      "s": 90,
+      "n": 14
+    },
+    {
+      "s": 100,
+      "n": 48
+    }
+  ],
+  "gainDist": [
+    {
+      "d": -30,
+      "n": 1
+    },
+    {
+      "d": 0,
+      "n": 33
+    },
+    {
+      "d": 10,
+      "n": 7
+    },
+    {
+      "d": 20,
+      "n": 9
+    },
+    {
+      "d": 30,
+      "n": 4
+    },
+    {
+      "d": 50,
+      "n": 1
+    }
+  ],
+  "topics": [
+    {
+      "label": "Informasi Baru Diperoleh",
+      "mean": 4.27
+    },
+    {
+      "label": "Peran Nuklir Sehari-hari",
+      "mean": 4.25
+    },
+    {
+      "label": "Nuklir Medis & Kesehatan",
+      "mean": 4.25
+    },
+    {
+      "label": "Nuklir Tidak Hanya Energi",
+      "mean": 4.25
+    },
+    {
+      "label": "Materi Memenuhi Harapan",
+      "mean": 4.24
+    },
+    {
+      "label": "Sejarah Nuklir Indonesia",
+      "mean": 4.23
+    },
+    {
+      "label": "Nuklir Riset & Inovasi",
+      "mean": 4.23
+    },
+    {
+      "label": "Nuklir Pangan & Pertanian",
+      "mean": 4.18
+    },
+    {
+      "label": "Relevansi dgn Pekerjaan",
+      "mean": 4.18
+    }
+  ],
+  "units": [
+    [
+      "PLN Kantor Pusat",
+      65
+    ],
+    [
+      "PLN Pusmanpro",
+      7
+    ],
+    [
+      "PLN Nusantara Power",
+      6
+    ],
+    [
+      "PLN Puslitbang",
+      5
+    ],
+    [
+      "PLN UIP JBTB",
+      5
+    ],
+    [
+      "PLN Pusat Sertifikasi",
+      4
+    ],
+    [
+      "PLN UIP3B Kalimantan",
+      4
+    ],
+    [
+      "PLN UID Bali",
+      4
+    ],
+    [
+      "PLN UIT JBT",
+      4
+    ],
+    [
+      "PLN Pusdiklat",
+      4
+    ]
+  ],
+  "ranking": [
+    [
+      "Andika Zain",
+      "UIP JBTB",
+      50,
+      100
+    ],
+    [
+      "Valensi Erza",
+      "PLN Puslitbang",
+      70,
+      100
+    ],
+    [
+      "Khrisna Vembri Yudanto",
+      "PLN Pusat",
+      70,
+      100
+    ],
+    [
+      "Muhammad Helmi Hamdani",
+      "PLN Pusat",
+      70,
+      100
+    ],
+    [
+      "Krisna Agus Setiawan",
+      "PLN Puslitbang",
+      70,
+      100
+    ],
+    [
+      "I Gusti Ngurah Agung S. D. P.",
+      "UPT Bali",
+      80,
+      100
+    ],
+    [
+      "Suranto",
+      "PLN UIT Jawa Bagian Tengah",
+      80,
+      100
+    ],
+    [
+      "Amaliyah Noor",
+      "Pusmanpro UPMK III",
+      80,
+      100
+    ],
+    [
+      "Yudi Hidayat",
+      "PLN Indonesia Power",
+      80,
+      100
+    ],
+    [
+      "Neysa Velda Ivana Riwu",
+      "UIP3B Kalimantan",
+      90,
+      100
+    ]
+  ],
+  "feedbackPositive": "Sangat positif: \"sudah baik\", \"ditunggu seri berikutnya\", permintaan program rutin bulanan.",
+  "findings": [
+    "Kualitas tinggi, jangkauan rendah — kepuasan & pembelajaran baik, tapi hanya sebagian kecil populasi terjangkau.",
+    "Audiens sudah teredukasi — banyak peserta sempurna sejak pre-test (self-selected).",
+    "Materi efektif bagi yang belum menguasai — mayoritas dari skor awal rendah meningkat.",
+    "Completion evaluasi rendah — pengisian pre & post jauh di bawah jumlah hadir."
+  ],
+  "limits": [
+    "Tidak ada data per butir soal — hanya skor agregat; analisis per soal & distribusi jawaban tak dapat dihitung.",
+    "Undangan/registrasi tidak terpisah dari roster kehadiran → konversi undangan tak terukur.",
+    "22 pre & 11 post tidak tercocokkan ke roster (identitas berbeda).",
+    "Feedback menyatu dengan post-test sehingga tak terukur independen."
+  ],
+  "qa": {
+    "attendeesLive": 204,
+    "questioners": 14,
+    "questions": 15
+  },
+  "chatQuestions": [
+    [
+      "Azhar Sodik",
+      "UID Kalbar",
+      "Untuk rencana PLTN di RUPTL, tipe reaktornya SMR — apa dasar pemilihan reaktor tersebut, sementara belum banyak negara mengimplementasikannya?",
+      "14:13"
+    ],
+    [
+      "Fauzi Asrul",
+      "PLN Nusantara Power",
+      "Ketakutan barat terhadap nuklir adalah pemurnian uranium untuk persenjataan. Benarkah, dan apa batasan penggunaan konsentrat uranium untuk kepentingan non-persenjataan?",
+      "14:13"
+    ],
+    [
+      "Agung Sutrisna",
+      "UPT Bali",
+      "Untuk lokasi pembangunan PLTN di Indonesia sebaiknya di mana, atau syarat apa yang dibutuhkan agar suatu daerah layak dibangun PLTN?",
+      "14:16"
+    ],
+    [
+      "Dimas Eka",
+      "PLN Pusat (DIVMEP)",
+      "Apa saja persyaratan dari sisi Owner/Pemilik PLTN dalam penyusunan kontrak atau pengadaan agar memenuhi persyaratan nasional dan internasional?",
+      "14:18"
+    ],
+    [
+      "M. Ardiansyah",
+      "UIP KLT",
+      "Sejauh mana kesiapan regulasi di Indonesia terkait pemanfaatan energi nuklir, dan sebesar apa kepercayaan internasional atas kemampuan Indonesia mengelolanya?",
+      "14:18"
+    ],
+    [
+      "Prida",
+      "—",
+      "Teknologi PLTN sudah meyakinkan banyak orang namun 'not in my backyard'. Apa mitigasi prioritas agar sikap ini tidak menjadi tantangan besar pengembangan PLTN?",
+      "14:18"
+    ],
+    [
+      "Joko Pitoyo",
+      "—",
+      "Untuk mempercepat pembangunan PLTN, usaha apa yang sudah dilakukan oleh Kementerian ESDM?",
+      "14:21"
+    ],
+    [
+      "Fernando Jonas Sitorus",
+      "PLN Indonesia Power",
+      "Mengapa masyarakat menerima nuklir di bidang kesehatan tetapi menolak PLTN? Apakah keberhasilan di sektor kesehatan dapat meningkatkan kepercayaan, dan bagaimana mengkomunikasikan manfaat ekonomi PLTN secara konkret?",
+      "14:22"
+    ],
+    [
+      "Adri Yasper",
+      "—",
+      "Dengan besarnya potensi EBT Indonesia (hydro, solar, geothermal, arus laut), mengapa Indonesia masih perlu melirik PLTN?",
+      "14:32"
+    ],
+    [
+      "Iman A",
+      "ULP Kenten",
+      "Bagaimana PLN memastikan keberadaan PLTN tidak menimbulkan stranded asset bila perkembangan baterai dan EBT berlangsung lebih cepat dari perkiraan?",
+      "14:36"
+    ],
+    [
+      "Azhar Sodik",
+      "UID Kalbar",
+      "Adakah efek stokastik terhadap pasien terapi fasilitas nuklir?",
+      "14:47"
+    ],
+    [
+      "Syaifuddin",
+      "PLN Nusantara Power (CMR-1)",
+      "Saat pasien disuntik material nuklir untuk PET/CT Scan, apakah material meluruh, bereaksi, atau terekskresi? Berapa waktu minimal–maksimal zat itu hilang dari tubuh?",
+      "14:49"
+    ],
+    [
+      "Faradiba Fajar R",
+      "UIW Babel",
+      "Apakah produk pangan yang bersentuhan teknologi nuklir (iradiasi) 100% aman dikonsumsi jangka panjang, dan apakah petani kecil sudah bisa mengaksesnya dengan mudah dan murah?",
+      "14:53"
+    ],
+    [
+      "Hadi Prayogo",
+      "—",
+      "Sebaiknya PLN membangun PLTN skala kecil/modular dulu atau langsung skala besar, dan sejauh mana kesiapan Indonesia mengelola limbah radioaktif PLTN?",
+      "14:53"
+    ],
+    [
+      "Henra Sibatuara",
+      "PLN Pusertif",
+      "Jika nuklir begitu bermanfaat, mengapa Indonesia belum punya PLTN komersial? Apa tantangan terbesar penerimaan masyarakat, dan dengan target NZE apakah PLTN kebutuhan atau alternatif?",
+      "14:57"
+    ]
+  ],
+  "perfect": {
+    "pre": 42,
+    "post": 48,
+    "both": 27,
+    "list": [
+      [
+        "Khusnul Khotimah",
+        "PLN UPT Kendari"
+      ],
+      [
+        "Fauzi Asrul",
+        "PLN Nusantara Power"
+      ],
+      [
+        "Ansyaruddin Rahmatdiansyah",
+        "PLN UIW NTT"
+      ],
+      [
+        "Ardian Rizkytama",
+        "PUSMANPRO"
+      ],
+      [
+        "Muhammad Lutfi Marjan",
+        "PLN Kantor Pusat"
+      ],
+      [
+        "Hernowo Aji Pratangga",
+        "PLN Pusat"
+      ],
+      [
+        "FERNANDO JONAS SITORUS",
+        "PLN INDONESIA POWER"
+      ],
+      [
+        "Arsy Hadyan",
+        "Bid bang pltn"
+      ],
+      [
+        "Ismail Hartanto",
+        "PLN UPP MPA 1"
+      ],
+      [
+        "Adri Yasper",
+        "UPK Flores/UIK Dwipantara"
+      ],
+      [
+        "Faradiba Fajar Ramadhan",
+        "Hcbp area 3"
+      ],
+      [
+        "Gustiyadi Fathur Rahmandi",
+        "PLN UID Kalsel & Kalteng UP3 Palangka Raya"
+      ],
+      [
+        "Edo Agung Wibowo Rendi Saputro",
+        "PLN UIP Nusa Tenggara"
+      ],
+      [
+        "Mimin Milasari",
+        "PLN UIP JBT"
+      ],
+      [
+        "Difa febriyanti",
+        "PLN UP2B DKI JAKARTA DAN BANTEN"
+      ],
+      [
+        "Seno Pandu Ahmad",
+        "PLN Enjiniring"
+      ],
+      [
+        "Tias Bayu Krisnandi",
+        "UITJBT"
+      ],
+      [
+        "Pandu Widianto Maidi",
+        "PLN PUSMANPRO"
+      ],
+      [
+        "Sutomo",
+        "PLN UIK TJB"
+      ],
+      [
+        "IMAN ASWILTON",
+        "PLN ULP KENTEN"
+      ],
+      [
+        "SHINTA IKAWATI",
+        "PLN UIP JBTB"
+      ],
+      [
+        "OKY FEBRI WAHYUDI",
+        "PLN PUSAT/PLN UIP3BS/UPT BANDA ACEH/ULTG LANGSA"
+      ],
+      [
+        "Nanang Asmin",
+        "PLN NP"
+      ],
+      [
+        "Marzuki",
+        "PLN MCTN"
+      ],
+      [
+        "Tito Rachman",
+        "PLN UIPJBTB"
+      ],
+      [
+        "PRASETYO EFENDY",
+        "PLN UIP JBTB"
+      ],
+      [
+        "Gesmulyadi",
+        "PLN UIP JBTB"
+      ]
+    ]
+  },
+  "feedbackItems": [
+    {
+      "text": "Sudah sangat baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Semoga bisa segera diterapkan utk pembangkit yg aman",
+      "cat": "Lainnya",
+      "sent": "Saran"
+    },
+    {
+      "text": "Menarik utjnmengikuti webinar selanjutnya",
+      "cat": "Lainnya",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Ditingkatkan",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Cukup baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "keren, lanjutkan",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Membahas mengenai tantangan aplikasi PLTN di Indonesia",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sudah oke",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "lebih banyak series terkait nuklir",
+      "cat": "Lainnya",
+      "sent": "Saran"
+    },
+    {
+      "text": "Webinar Nuclear Awareness sangat bermanfaat dalam meningkatkan pemahaman mengenai peran energi nuklir dalam mendukung ketahanan energi nasional dan pencapaian Net Zero Emission (NZE) 2060. Ke depannya, saya berharap materi dapat lebih banyak membahas implementasi nuklir dalam konteks sistem ketenagalistrikan Indonesia, khususnya keterkaitannya dengan RUPTL PLN, aspek keekonomian PLTN dibandingkan sumber energi lainnya, serta studi kasus keberhasilan penerapan nuklir di berbagai negara. Selain itu, sesi diskusi interaktif dan tanya jawab dapat diperpanjang agar peserta memiliki kesempatan lebih luas untuk menggali isu-isu strategis maupun teknis terkait pengembangan energi nuklir di Indonesia.",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Bagus untuk meningkatkan awareness terkait bahaya nuklir, akan lebih baik jika menjangkau masyarakat umum",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Serial teknologi lain juga perlu dibuat",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "dilanjutkan dengan materi yang lain terkait teknologi nuklir",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Pengembangan nuklir untuk sektor kelistrikan",
+      "cat": "Lainnya",
+      "sent": "Saran"
+    },
+    {
+      "text": "Tambahan narasumber dari background lainnya",
+      "cat": "Narasumber",
+      "sent": "Saran"
+    },
+    {
+      "text": "sangat bagus sekali",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Saya ingin mengetahui tentang Nuklir, khusunya PLTN lebih banyak",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Kalau bisa di kasih contoh studi kasus yang nyata atau rill di bidang yg dekat dengan masyakarat",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "dipertahankan tema yg mendukung transisi energi menuju NZE",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "sangat baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Insight baru",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "agar lebih sering dilakukan awareness supaya lebih dapat lagi tersampaikan terkait materi ini",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Tidak sabar untuk seri berikutnya",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Materi lebih detail tentang aplikasi nuklir di pembangkit listrik",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Agar materinya lebih menarik",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Lebih banyak lagi hadiahnya",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Membahas secara teknis bagaimana mengoperasi dan memelihara PLTN",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Membahas kemajuan kebijakan PLTN terbaru dari pemerintah di Indonesia",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "agar lebih interaktif",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Untuk dapat di share materi presentasinya",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sering disosialisasikan tentang energi Nuklir supaya ramah lingkungan dan transisi energi",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Ditunggu series berikutnya",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Ditunggu webinar Nuclear Awareness yang akan datang, mohon materi dapat dishare kepada peserta webinar",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Awarness untuk teknologi listrik",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Berlanjut ke materi selanjutnya..",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Membahas Peran nuklir dlm transisi energi utk ketahanan energi nasional",
+      "cat": "Lainnya",
+      "sent": "Saran"
+    },
+    {
+      "text": "Untuk diinformasikan tema-tema series yang akan diwebinarkan dan disharing rekamannya apabila ingin melihat lagi",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Saya berharap webinar Nuclear Awareness selanjutnya dapat menghadirkan lebih banyak studi kasus dan contoh penerapan teknologi nuklir yang dekat dengan kehidupan sehari-hari, seperti di bidang kesehatan, pertanian, industri, dan energi. Selain itu, sesi tanya jawab dapat diperpanjang agar peserta memiliki kesempatan lebih banyak untuk berdiskusi dan memahami isu-isu terkait nuklir secara lebih mendalam. Semoga kegiatan ini terus berlanjut untuk meningkatkan literasi masyarakat mengenai manfaat, keamanan, dan peran teknologi nuklir dalam mendukung pembangunan nasional serta target Net Zero Emissions (NZE)",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "visualisasi : adanya animasi 3D atau infografis interaktif mengenai cara kerja Pembangkit Listrik Tenaga Nuklir (PLTN) dan sistem keselamatannya",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Semoga dg tenaga nuklir ini bisa ditemukan teknologi yg lebih ringkas dan preventif untuk kesehatan manusia",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Untuk medis ilmu radioaktif (nuklir) sudah cukup berkembang, semoga bisa terimplementasi untuk swasembada energi dan juga pertahanan",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Terkait tema nuklir sebagai EBT lebih detail",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Siap nyimak... Mohon di infokan lebih luas di group internal PLN Group.",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sudah bagus",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Mantap",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Batasan Radiasi yang wajar dan Mitigasi penanganan bahaya radiasi Nuklir",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sesi diskusi yang lebih interaktif",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Update progress implementasi PLTN di Indonesia",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Prinsip cara kerja nuklir di dalam pembangkitan tenaga listrik",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "cukup",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sistem pemanfaatan nuklir pada sektor pembangkit listrik",
+      "cat": "Lainnya",
+      "sent": "Saran"
+    },
+    {
+      "text": "Ada kegiatan kunjungan ke reaktor",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "lebih banyak materi tentang nuklir termasuk pembangunan pembangkit nuklir",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Cukup",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "cukup baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Segera terimplementasi dengan baik dan aman",
+      "cat": "Lainnya",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Oke",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Melanjutkan materi ke PLTN",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Tambah memahami peran nuklir untuk kehidupan sehari2",
+      "cat": "Lainnya",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sangat bagus sekali kedepan lebih banyak kesempatan untuk bertanya",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Sudah baik. Tingkatkan",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Materi bisa ditambahkan video2",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Menarik dengan menambahkan contoh seperti dokter SpKN",
+      "cat": "Narasumber",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Ditingkatkan",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sudha baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "mantab dan interaktif",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Menambah pembicara dari praktisi PLTN dari dalam dan luar negeri",
+      "cat": "Narasumber",
+      "sent": "Saran"
+    },
+    {
+      "text": "Share screen recording dan materi..",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Oke",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Program ini sudah berjalan dengan baik dan relevan dengan tantangan transisi energi saat ini. Untuk meningkatkan kualitas program, saya menyarankan agar materi lebih banyak mengaitkan teknologi nuklir dengan kondisi dan kebutuhan Indonesia, termasuk keterkaitannya dengan RUPTL PLN, target NZE 2060, ketahanan energi nasional, serta aspek keekonomian dan regulasinya. Selain itu, dapat ditambahkan studi kasus dari negara-negara yang berhasil mengimplementasikan PLTN, sesi diskusi yang lebih interaktif, serta penyampaian materi teknis yang lebih mendalam bagi peserta yang memiliki latar belakang ketenagalistrikan dan energi. Dengan demikian, peserta tidak hanya memahami konsep dasar nuklir, tetapi juga memperoleh gambaran implementasi yang lebih aplikatif dan strategis.",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Baik, hanya terlalu singkat durasinya",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Pertanyaan yang ditampung dapat dijawab narasumber dan disampaikan di link.tree",
+      "cat": "Narasumber",
+      "sent": "Saran"
+    },
+    {
+      "text": "materi bisa merujuk ke pengembangan PLTN",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Studi kasus di daerah indonesia",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Tambahan narasumber dari background lainnya",
+      "cat": "Narasumber",
+      "sent": "Saran"
+    },
+    {
+      "text": "sangat bagus sekali",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Saya ingin ini lebih diikuti oleh khalayak ramai tidak hanya insan PLN",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Lebih interktif",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "lanjut ke tema energi baru terbarukan lainnya",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "sangat baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Baik, lebih detail ke nuklir pembangkit",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "sampaikan pula rencana PLN terkait pengembangan nuklir",
+      "cat": "Lainnya",
+      "sent": "Saran"
+    },
+    {
+      "text": "Kualitas barasumber dipertahankan",
+      "cat": "Narasumber",
+      "sent": "Saran"
+    },
+    {
+      "text": "Durasi lebih lama",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Menyampaikan isue2 terbaru dan studi kasus",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Lebih banyak lagi hadiahnya",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Membahas secara teknis bagaimana mengoperasi dan memelihara PLTN",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sangat baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "agar lebih interaktif",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Ditunggu sesi berikutnya",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sering dilaksanakan sosialisasi energi nuklir ke masyarakat umum",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Belum ada",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Menghadirkan narasumber dari regulator dan praktisi yang sudah berpengalaman internasional",
+      "cat": "Narasumber",
+      "sent": "Saran"
+    },
+    {
+      "text": "Dapat diinformasikan lebih awal",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Kalau bisa kuis ny diperbanyak lagi..sisany sdh baik pertahankan..",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Menampilkan pemateri yg qualified",
+      "cat": "Narasumber",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Untuk diinformasikan tema-tema series yang akan diwebinarkan dan disharing rekamannya apabila ingin melihat lagi",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Menambah sesi interaktif, memperpanjang waktu tanya jawab, serta menyediakan materi dan rekaman webinar setelah kegiatan agar peserta dapat memahami materi dengan lebih optimal.",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Perbandingan langsung antara negara sukses pengguna nuklir (seperti Jepang, Perancis) dengan kondisi geografis Indonesia",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Diharapkan ada edukasi kembali terkait tanda2 resiko kesehatan yang dapat dialami oleh masyarakat atas teknologi nuklir tersebut",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Untuk penjelasan sudah baik dan detail, semoga kedepannya bisa diupdate informasi teknologi nuklirnya",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Nara sumber yang berinteraksi langsung dengan kegiatan Nuklir",
+      "cat": "Narasumber",
+      "sent": "Saran"
+    },
+    {
+      "text": "Program sudah bagus",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Cukup",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Pemaparan Risiko dan Mitigasi Radiasi Nuklir",
+      "cat": "Narasumber",
+      "sent": "Saran"
+    },
+    {
+      "text": "roadmap dan sasaran output yang terukur",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Terus dilanjutkan informasi PLTN hingga PLTN beroperasi di Indonesia",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sudah sangat baik .",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "diganti dengan format luring , jadi harapannya bisa lebih interaktif",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Sudah bagus",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Mendapat insight baru dan arah kebijakan",
+      "cat": "Materi",
+      "sent": "Saran"
+    },
+    {
+      "text": "materi dapat di share",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Cukup",
+      "cat": "Apresiasi",
+      "sent": "Saran"
+    },
+    {
+      "text": "sudah cukup baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Series selanjutnya segera dimulai",
+      "cat": "Lainnya",
+      "sent": "Saran"
+    },
+    {
+      "text": "Oke",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "Konsisten diadakan secara rutin bulanan",
+      "cat": "Program",
+      "sent": "Saran"
+    },
+    {
+      "text": "Keren",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "sudah bagus",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    },
+    {
+      "text": "sudah baik",
+      "cat": "Apresiasi",
+      "sent": "Apresiasi"
+    }
+  ],
+  "strengths": [
+    "Materi relevan & membuka wawasan — banyak peserta menyebut memperoleh insight baru dan mengaitkannya dengan target NZE 2060.",
+    "Narasumber dinilai berkualitas dan menjelaskan detail, termasuk perspektif nuklir medis dari dokter spesialis.",
+    "Topik aplikatif lintas sektor (kesehatan, pangan, energi) menarik minat dan terasa dekat dengan keseharian.",
+    "Antusiasme tinggi — banyak permintaan agar program dilanjutkan secara rutin bulanan.",
+    "Kepuasan tinggi merata di seluruh dimensi penilaian (rata-rata 4,18–4,27 dari 5)."
+  ],
+  "improvements": [
+    "Durasi dirasa terlalu singkat, terutama sesi tanya-jawab yang banyak diminati.",
+    "Kedalaman teknis PLTN masih kurang bagi peserta berlatar ketenagalistrikan.",
+    "Materi presentasi & rekaman belum dibagikan pascawebinar.",
+    "Jangkauan distribusi terbatas — banyak meminta diperluas ke seluruh PLN Group, bahkan masyarakat umum.",
+    "Interaktivitas perlu ditingkatkan (kuis, diskusi, format yang lebih hidup)."
+  ],
+  "recommendations": [
+    "Perpanjang & strukturkan sesi tanya-jawab; tampung pertanyaan via polling sejak awal sesi.",
+    "Bagikan materi presentasi, rekaman, dan jawaban pertanyaan melalui satu tautan pascawebinar.",
+    "Tambah studi kasus nyata dan perbandingan antarnegara (mis. Jepang, Prancis) dengan konteks Indonesia.",
+    "Hadirkan narasumber praktisi dan regulator yang berpengalaman internasional.",
+    "Kaitkan materi dengan RUPTL, target NZE 2060, serta aspek keekonomian dan regulasi PLTN.",
+    "Tambahkan visualisasi (animasi 3D/infografis) cara kerja dan sistem keselamatan PLTN.",
+    "Perluas distribusi undangan ke seluruh PLN Group; pertimbangkan jangkauan ke publik.",
+    "Jadwalkan rutin bulanan dengan tema yang diinformasikan lebih awal kepada peserta."
+  ],
+  "ratingLegend": [
+    {
+      "min": 4.5,
+      "label": "Sangat Baik",
+      "color": "#1b6e2e"
+    },
+    {
+      "min": 3.5,
+      "label": "Baik",
+      "color": "#2e75b6"
+    },
+    {
+      "min": 2.5,
+      "label": "Cukup",
+      "color": "#e3922b"
+    },
+    {
+      "min": 1.5,
+      "label": "Kurang",
+      "color": "#c2622a"
+    },
+    {
+      "min": 0,
+      "label": "Sangat Kurang",
+      "color": "#b3261e"
+    }
+  ]
+}
