@@ -94,7 +94,14 @@ export function parseTimestamp(value: unknown): string | null {
   const dmy = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})[ T](\d{1,2}):(\d{2})(?::(\d{2}))?$/);
   if (dmy) {
     const [, d, m, y, h, mi, se] = dmy;
-    const date = new Date(Number(y), Number(m) - 1, Number(d), Number(h), Number(mi), Number(se ?? 0));
+    // These exports (Google Forms / quiz submission logs) record wall-clock
+    // time in WIB (UTC+7). Build the UTC instant directly instead of using
+    // `new Date(y, m, d, h, mi, s)`, which reads those numbers in the
+    // *runtime's* local timezone -- UTC in this deployment -- and would
+    // silently mislabel a WIB time as if it were already UTC (so it then
+    // renders 7 hours late wherever the UI correctly converts to WIB).
+    const utcMs = Date.UTC(Number(y), Number(m) - 1, Number(d), Number(h) - 7, Number(mi), Number(se ?? 0));
+    const date = new Date(utcMs);
     return Number.isNaN(date.getTime()) ? null : date.toISOString();
   }
   const idText = s.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);

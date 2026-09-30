@@ -22,3 +22,8 @@ export function pct(n: number | null | undefined): string {
 }
 
 export const tnum = { fontVariantNumeric: "tabular-nums" } as const;
+
+/** Formats an ISO timestamp as WIB (Asia/Jakarta) regardless of the server's or viewer's own timezone. */
+export function formatWib(iso: string): string {
+  return `${new Date(iso).toLocaleString("id-ID", { timeZone: "Asia/Jakarta" })} WIB`;
+}

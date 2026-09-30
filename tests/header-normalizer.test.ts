@@ -84,14 +84,22 @@ describe("normalizeEmail", () => {
 });
 
 describe("parseTimestamp", () => {
-  it("parses DD/MM/YYYY HH:mm:ss", () => {
+  it("parses DD/MM/YYYY HH:mm:ss as WIB (UTC+7) and stores the correct UTC instant", () => {
+    // These exports are quiz/form submission logs in WIB wall-clock time --
+    // 14:20:29 WIB is 07:20:29 UTC, not 14:20:29 UTC.
     const iso = parseTimestamp("16/07/2026 14:20:29");
-    expect(iso).not.toBeNull();
+    expect(iso).toBe("2026-07-16T07:20:29.000Z");
     const d = new Date(iso as string);
-    expect(d.getFullYear()).toBe(2026);
-    expect(d.getMonth()).toBe(6); // July = index 6
-    expect(d.getDate()).toBe(16);
-    expect(d.getHours()).toBe(14);
+    expect(d.getUTCFullYear()).toBe(2026);
+    expect(d.getUTCMonth()).toBe(6); // July = index 6
+    expect(d.getUTCDate()).toBe(16);
+    expect(d.getUTCHours()).toBe(7);
+  });
+
+  it("rolls the UTC date back a day when the WIB time is before 07:00", () => {
+    // 03:00 WIB on the 17th is 20:00 UTC on the 16th.
+    const iso = parseTimestamp("17/07/2026 03:00:00");
+    expect(iso).toBe("2026-07-16T20:00:00.000Z");
   });
 
   it("parses Indonesian text dates", () => {

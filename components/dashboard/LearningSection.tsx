@@ -5,7 +5,7 @@ import { GraduationCap, TrendingUp, Award, Trophy } from "lucide-react";
 import { Card, SectionTitle, Kpi, StatChip, EmptyState } from "./ui/primitives";
 import { SeriesBarChart } from "./charts/SeriesBarChart";
 import { ScatterPrePost } from "./charts/ScatterPrePost";
-import { C, num } from "@/lib/theme";
+import { C, num, formatWib } from "@/lib/theme";
 import { getFastestPerfectScorers } from "@/lib/analytics/learning";
 import type { WebinarMetrics } from "@/types/analytics";
 
@@ -119,8 +119,8 @@ export function LearningSection({ metrics }: { metrics: WebinarMetrics }) {
                   <div className="truncate text-[11.5px]" style={{ color: C.slateSoft }}>{p.unit}</div>
                 </div>
                 <div className="shrink-0 text-right text-[11.5px]" style={{ color: C.inkSoft }}>
-                  <div>Submit pre-test: {p.preTimestamp ? new Date(p.preTimestamp).toLocaleString("id-ID") : "-"}</div>
-                  <div style={{ color: C.ink, fontWeight: 600 }}>Submit post-test: {p.postTimestamp ? new Date(p.postTimestamp).toLocaleString("id-ID") : "-"}</div>
+                  <div>Submit pre-test: {p.preTimestamp ? formatWib(p.preTimestamp) : "-"}</div>
+                  <div style={{ color: C.ink, fontWeight: 600 }}>Submit post-test: {p.postTimestamp ? formatWib(p.postTimestamp) : "-"}</div>
                 </div>
               </div>
             ))}
