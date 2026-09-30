@@ -64,17 +64,18 @@ describe("Webinar 5 baked-in seed", () => {
     expect(metrics.attendance.databaseParticipantCount).toBe(w5.participants.length - excludedCount);
   });
 
-  it("counts every registrant, with two attendance tiers: >=5 minutes present and >=30 minutes valid", () => {
+  it("uses a 5-minute attendance threshold as the dashboard-wide basis (294, not the stricter 30-minute 268)", () => {
+    expect(w5.metadata.attendanceThresholdMinutes).toBe(5);
     const metrics = calculateWebinarMetrics(w5);
     expect(metrics.attendance.registeredCount).toBeGreaterThan(400);
-    expect(metrics.attendance.zoomPresentCount).toBeGreaterThan(200);
-    expect(metrics.attendance.zoomValidAttendeeCount).toBeGreaterThan(200);
-    // the >=30m tier is always a subset of the >=5m tier, never larger.
-    expect(metrics.attendance.zoomValidAttendeeCount).toBeLessThanOrEqual(metrics.attendance.zoomPresentCount);
+    expect(metrics.attendance.zoomValidAttendeeCount).toBe(294);
+    // at a 5-minute threshold, zoomPresentCount (its own fixed >=5m/no-duration
+    // rule) and zoomValidAttendeeCount converge on the same number.
+    expect(metrics.attendance.zoomValidAttendeeCount).toBe(metrics.attendance.zoomPresentCount);
     expect(metrics.attendance.zoomValidAttendeeCount).toBeLessThan(metrics.attendance.registeredCount);
     for (const p of w5.participants.filter((p) => !p.excluded)) {
       if (p.attendance.zoomDurationMinutes != null) {
-        expect(p.attendance.zoomValidAttendee).toBe(p.attendance.zoomDurationMinutes >= 30);
+        expect(p.attendance.zoomValidAttendee).toBe(p.attendance.zoomDurationMinutes >= 5);
       }
     }
   });

@@ -10,6 +10,7 @@ import type { WebinarMetrics } from "@/types/analytics";
 
 export function AttendanceSection({ webinar, metrics }: { webinar: Webinar; metrics: WebinarMetrics }) {
   const a = metrics.attendance;
+  const presentTierIsDistinct = webinar.metadata.attendanceThresholdMinutes > 5;
   const comp = [
     { name: "Hadir & registrasi", value: a.registeredAndAttendedCount, color: C.green },
     { name: "Hadir tanpa registrasi", value: a.attendedWithoutRegistrationCount, color: C.amberSoft },
@@ -18,7 +19,7 @@ export function AttendanceSection({ webinar, metrics }: { webinar: Webinar; metr
   const funnelSteps: { label: string; value: number | null }[] = [
     { label: "Populasi pegawai", value: webinar.metadata.population },
     { label: "Registrasi", value: a.registeredCount },
-    { label: "Hadir Zoom (>=5 menit)", value: a.zoomPresentCount },
+    ...(presentTierIsDistinct ? [{ label: "Hadir Zoom (>=5 menit)", value: a.zoomPresentCount }] : []),
     { label: "Hadir Zoom valid (>{threshold} menit)".replace("{threshold}", String(webinar.metadata.attendanceThresholdMinutes)), value: a.zoomValidAttendeeCount },
     { label: "Pre-Test", value: metrics.learning.preRespondentCount },
     { label: "Post-Test", value: metrics.learning.postRespondentCount },
@@ -30,13 +31,16 @@ export function AttendanceSection({ webinar, metrics }: { webinar: Webinar; metr
   return (
     <div className="space-y-4">
       <Card className="p-5">
-        <SectionTitle icon={UserCheck} hint={`2 kategori: hadir (>=5 menit) dan hadir valid (>${webinar.metadata.attendanceThresholdMinutes} menit)`}>
+        <SectionTitle
+          icon={UserCheck}
+          hint={presentTierIsDistinct ? `2 kategori: hadir (>=5 menit) dan hadir valid (>${webinar.metadata.attendanceThresholdMinutes} menit)` : `basis: hadir valid (>${webinar.metadata.attendanceThresholdMinutes} menit)`}
+        >
           Komposisi Kehadiran
         </SectionTitle>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <StatChip icon={Video} label="Hadir Zoom (>=5 menit)" value={a.zoomPresentCount} color={C.violet} />
+              {presentTierIsDistinct && <StatChip icon={Video} label="Hadir Zoom (>=5 menit)" value={a.zoomPresentCount} color={C.violet} />}
               <StatChip icon={UserCheck} label="Hadir & Registrasi" value={a.registeredAndAttendedCount} color={C.green} />
               <StatChip icon={UserPlus} label="Hadir Tanpa Registrasi" value={a.attendedWithoutRegistrationCount} color={C.amberSoft} />
               <StatChip icon={UserX} label="Registrasi, Tidak Hadir" value={a.registeredNotAttendedCount} color={C.red} />

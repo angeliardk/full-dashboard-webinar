@@ -12,7 +12,7 @@
     "seriesName": "Literasi Nuklir untuk Masa Depan Rendah Karbon",
     "sourceName": "Participants, Questions",
     "population": null,
-    "attendanceThresholdMinutes": 30
+    "attendanceThresholdMinutes": 5
   },
   "participants": [
     {
@@ -434,7 +434,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 19,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Adam Febrian"
@@ -584,7 +584,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 20,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Adhitya Tri Ananda Nasution"
@@ -934,7 +934,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 16,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Agung Bayu Kusumo"
@@ -4634,7 +4634,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 28,
         "zoomJoinCount": 2,
         "zoomDisplayName": "bayu agustrio"
@@ -4834,7 +4834,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 19,
         "zoomJoinCount": 1,
         "zoomDisplayName": "BENNY SUSANTO"
@@ -4934,7 +4934,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 14,
         "zoomJoinCount": 1,
         "zoomDisplayName": "Budhi SETIAWAN"
@@ -5334,7 +5334,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 28,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Darya Patra"
@@ -5534,7 +5534,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 23,
         "zoomJoinCount": 2,
         "zoomDisplayName": "deddy kurniawan"
@@ -7934,7 +7934,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 21,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Fajriatul Maulida"
@@ -8584,7 +8584,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 11,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Firda Fadila"
@@ -10434,7 +10434,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 15,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Inaya Yuliandaru"
@@ -10584,7 +10584,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 24,
         "zoomJoinCount": 5,
         "zoomDisplayName": "Muhamad Indra Firdaus"
@@ -10634,7 +10634,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 5,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Indra Widianto"
@@ -11234,7 +11234,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 17,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Nashru Isnanto"
@@ -11784,7 +11784,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 15,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Juang Wau"
@@ -13834,7 +13834,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 22,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Mira Permata Sari"
@@ -14334,7 +14334,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 8,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Muhammad Lutfi Marjan"
@@ -14684,7 +14684,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 23,
         "zoomJoinCount": 3,
         "zoomDisplayName": "nanang prasetyo"
@@ -15584,7 +15584,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 10,
         "zoomJoinCount": 1,
         "zoomDisplayName": "NUR SYAMSIAH"
@@ -17184,7 +17184,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 13,
         "zoomJoinCount": 2,
         "zoomDisplayName": "ranto ."
@@ -18134,7 +18134,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 13,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Rizka Saputra / UP2D Lampung"
@@ -18184,7 +18184,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 28,
         "zoomJoinCount": 3,
         "zoomDisplayName": "RIZKA INTAN YOLANDA"
@@ -18284,7 +18284,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 19,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Rizky Agustian"
@@ -18384,7 +18384,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 24,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Cc Ccv"
@@ -19134,7 +19134,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 12,
         "zoomJoinCount": 2,
         "zoomDisplayName": "Septian Togatorop"
@@ -19884,7 +19884,7 @@
         "registeredEcadin": true,
         "attendedZoomForm": false,
         "inZoomCsv": true,
-        "zoomValidAttendee": false,
+        "zoomValidAttendee": true,
         "zoomDurationMinutes": 29,
         "zoomJoinCount": 4,
         "zoomDisplayName": "Sutomo Sutomo"

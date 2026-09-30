@@ -59,6 +59,10 @@ export function WebinarDashboard({
   const [sub, setSub] = useState<string>("ringkasan");
   const hasIssues = webinar.importInfo.issues.some((i) => i.level === "error");
   const hasWarnings = webinar.importInfo.issues.some((i) => i.level === "warning");
+  // Below a 5-minute threshold, "hadir valid" and "hadir >=5 menit" are the same number --
+  // showing both would just be the same count twice, so the looser tier only earns its own
+  // card/line when the webinar's own threshold is actually stricter than 5 minutes.
+  const presentTierIsDistinct = webinar.metadata.attendanceThresholdMinutes > 5;
 
   return (
     <div className="space-y-5">
@@ -92,7 +96,9 @@ export function WebinarDashboard({
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5">
         <Kpi label="Peserta Database" value={metrics.attendance.databaseParticipantCount} accent={C.slate} overridden={overriddenKeys.has("attendance.databaseParticipantCount")} />
         <Kpi label="Registrasi" value={metrics.attendance.registeredCount} accent={C.cyan} overridden={overriddenKeys.has("attendance.registeredCount")} />
-        <Kpi label="Hadir Zoom (>=5m)" value={metrics.attendance.zoomPresentCount} accent={C.violet} overridden={overriddenKeys.has("attendance.zoomPresentCount")} />
+        {presentTierIsDistinct && (
+          <Kpi label="Hadir Zoom (>=5m)" value={metrics.attendance.zoomPresentCount} accent={C.violet} overridden={overriddenKeys.has("attendance.zoomPresentCount")} />
+        )}
         <Kpi label="Hadir Zoom Valid" value={metrics.attendance.zoomValidAttendeeCount} accent={C.blue} overridden={overriddenKeys.has("attendance.zoomValidAttendeeCount")} />
         <Kpi label="Pre-Test" value={metrics.learning.preRespondentCount} accent={C.violet} overridden={overriddenKeys.has("learning.preRespondentCount")} />
         <Kpi label="Post-Test" value={metrics.learning.postRespondentCount} accent={C.green} overridden={overriddenKeys.has("learning.postRespondentCount")} />
@@ -119,13 +125,19 @@ export function WebinarDashboard({
           <Card className="p-5">
             <h3 className="mb-2 flex items-center gap-2 text-[15px] font-semibold" style={{ color: C.ink }}><Users size={17} style={{ color: C.blue }} />Kehadiran Singkat</h3>
             <p className="text-[12.5px]" style={{ color: C.inkSoft }}>
-              {`${num(metrics.attendance.zoomPresentCount)} peserta hadir (≥5 menit) dan ${num(
-                metrics.attendance.zoomValidAttendeeCount,
-              )} di antaranya hadir valid (>${webinar.metadata.attendanceThresholdMinutes} menit) dari ${num(
-                metrics.attendance.registeredCount,
-              )} registrasi (${num(metrics.attendance.registeredAndAttendedCount)} keduanya, ${num(
-                metrics.attendance.attendedWithoutRegistrationCount,
-              )} hadir tanpa registrasi).`}
+              {presentTierIsDistinct
+                ? `${num(metrics.attendance.zoomPresentCount)} peserta hadir (≥5 menit) dan ${num(
+                    metrics.attendance.zoomValidAttendeeCount,
+                  )} di antaranya hadir valid (>${webinar.metadata.attendanceThresholdMinutes} menit) dari ${num(
+                    metrics.attendance.registeredCount,
+                  )} registrasi (${num(metrics.attendance.registeredAndAttendedCount)} keduanya, ${num(
+                    metrics.attendance.attendedWithoutRegistrationCount,
+                  )} hadir tanpa registrasi).`
+                : `${num(metrics.attendance.zoomValidAttendeeCount)} peserta hadir valid (>${webinar.metadata.attendanceThresholdMinutes} menit) dari ${num(
+                    metrics.attendance.registeredCount,
+                  )} registrasi (${num(metrics.attendance.registeredAndAttendedCount)} keduanya, ${num(
+                    metrics.attendance.attendedWithoutRegistrationCount,
+                  )} hadir tanpa registrasi).`}
             </p>
           </Card>
           <Card className="p-5">
