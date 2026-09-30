@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { calculateAttendanceMetrics } from "@/lib/analytics/attendance";
 import { calculateLearningMetrics } from "@/lib/analytics/learning";
 import { calculateFeedbackMetrics, categorizeComment } from "@/lib/analytics/feedback";
-import { calculateUnitDistribution } from "@/lib/analytics/units";
+import { calculateUnitDistribution, calculateQuestionMetrics } from "@/lib/analytics/units";
 import { classifyPlnCompanyGroup, calculateCompanyGroupDistribution } from "@/lib/analytics/pln-company-group";
 import { makeFeedback, makeParticipant } from "./fixtures/participant-factory";
 
@@ -153,6 +153,28 @@ describe("calculateUnitDistribution", () => {
     expect(rows.find((r) => r.unit === "PLN Pusat")?.count).toBe(2);
     expect(rows.find((r) => r.unit === "PLN Puslitbang")?.count).toBe(1);
     expect(rows.reduce((s, r) => s + r.count, 0)).toBe(3);
+  });
+});
+
+describe("calculateQuestionMetrics", () => {
+  const question = (askerName: string) => ({ id: `q-${askerName}`, time: null, askerName, unit: null, question: "Pertanyaan?" });
+
+  it("computes askerPercentOfAttendees against the given valid-attendee base", () => {
+    const questions = [question("Amerikanuddin"), question("Amerikanuddin"), question("Sidik")];
+    const metrics = calculateQuestionMetrics(questions, 294);
+    expect(metrics?.questionCount).toBe(3);
+    expect(metrics?.askerCount).toBe(2);
+    // 2 / 294 * 100, rounded to 2dp -- exercises the real ratio() helper, no hand-rounded literal.
+    expect(metrics?.askerPercentOfAttendees).toBeCloseTo((2 / 294) * 100, 2);
+  });
+
+  it("returns null (not a divide-by-zero crash) when there are no valid attendees", () => {
+    const metrics = calculateQuestionMetrics([question("Sidik")], 0);
+    expect(metrics?.askerPercentOfAttendees).toBeNull();
+  });
+
+  it("returns null for an empty question list", () => {
+    expect(calculateQuestionMetrics([], 294)).toBeNull();
   });
 });
 

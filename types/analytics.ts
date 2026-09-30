@@ -78,6 +78,8 @@ export interface QuestionActivityMetrics {
   questionCount: number;
   askerCount: number;
   topAskers: { name: string; unit: string | null; count: number }[];
+  /** askerCount / attendance.zoomValidAttendeeCount, as a percentage (null when there are no valid attendees to divide by). */
+  askerPercentOfAttendees: number | null;
 }
 
 export interface CompletionRates {

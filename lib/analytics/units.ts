@@ -1,6 +1,6 @@
 import type { Participant, WebinarQuestion } from "@/types/webinar";
 import type { QuestionActivityMetrics, UnitDistributionRow } from "@/types/analytics";
-import { activeParticipants } from "./helpers";
+import { activeParticipants, ratio } from "./helpers";
 
 export function calculateUnitDistribution(participants: Participant[]): UnitDistributionRow[] {
   const active = activeParticipants(participants).filter((p) => p.attendance.zoomValidAttendee);
@@ -14,7 +14,7 @@ export function calculateUnitDistribution(participants: Participant[]): UnitDist
     .sort((a, b) => b.count - a.count);
 }
 
-export function calculateQuestionMetrics(questions: WebinarQuestion[]): QuestionActivityMetrics | null {
+export function calculateQuestionMetrics(questions: WebinarQuestion[], validAttendeeCount: number): QuestionActivityMetrics | null {
   if (!questions || questions.length === 0) return null;
   const askerCounts = new Map<string, { name: string; unit: string | null; count: number }>();
   for (const q of questions) {
@@ -29,5 +29,6 @@ export function calculateQuestionMetrics(questions: WebinarQuestion[]): Question
     questionCount: questions.length,
     askerCount: askerCounts.size,
     topAskers: [...askerCounts.values()].sort((a, b) => b.count - a.count),
+    askerPercentOfAttendees: ratio(askerCounts.size, validAttendeeCount),
   };
 }

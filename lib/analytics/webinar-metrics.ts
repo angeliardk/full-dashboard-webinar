@@ -21,13 +21,14 @@ export function calculateCompletionRates(webinar: Webinar): CompletionRates {
 }
 
 export function calculateWebinarMetrics(webinar: Webinar): WebinarMetrics {
+  const attendance = calculateAttendanceMetrics(webinar.participants);
   return {
-    attendance: calculateAttendanceMetrics(webinar.participants),
+    attendance,
     learning: calculateLearningMetrics(webinar.participants),
     feedback: calculateFeedbackMetrics(webinar.feedback),
     units: calculateUnitDistribution(webinar.participants),
     companyGroups: calculateCompanyGroupDistribution(webinar.participants),
-    questions: calculateQuestionMetrics(webinar.questions),
+    questions: calculateQuestionMetrics(webinar.questions, attendance.zoomValidAttendeeCount),
     completion: calculateCompletionRates(webinar),
   };
 }

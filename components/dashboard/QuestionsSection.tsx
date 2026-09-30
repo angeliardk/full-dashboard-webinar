@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from "react";
 import { HelpCircle, Search } from "lucide-react";
 import { Card, SectionTitle, StatChip, EmptyState } from "./ui/primitives";
-import { C } from "@/lib/theme";
+import { C, pct } from "@/lib/theme";
 import type { Webinar } from "@/types/webinar";
 import type { QuestionActivityMetrics } from "@/types/analytics";
 
@@ -29,7 +29,7 @@ export function QuestionsSection({ webinar, metrics }: { webinar: Webinar; metri
       <SectionTitle icon={HelpCircle} hint={`${metrics.questionCount} pertanyaan dari ${metrics.askerCount} penanya`}>
         Pertanyaan Peserta
       </SectionTitle>
-      <div className="mb-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+      <div className="mb-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatChip label="Jumlah Pertanyaan" value={metrics.questionCount} color={C.blue} />
         <StatChip label="Jumlah Penanya" value={metrics.askerCount} color={C.violet} />
         <StatChip
@@ -37,6 +37,12 @@ export function QuestionsSection({ webinar, metrics }: { webinar: Webinar; metri
           value={metrics.askerCount ? Math.round((metrics.questionCount / metrics.askerCount) * 100) / 100 : 0}
           color={C.green}
           sub="pertanyaan/penanya"
+        />
+        <StatChip
+          label="% Peserta Bertanya"
+          value={metrics.askerPercentOfAttendees != null ? pct(metrics.askerPercentOfAttendees) : "-"}
+          color={C.amber}
+          sub="dari peserta hadir valid"
         />
       </div>
       <div className="mb-2 flex items-center gap-1.5 rounded-lg border px-2 py-1" style={{ borderColor: C.line, width: 260 }}>
