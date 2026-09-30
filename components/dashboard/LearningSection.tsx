@@ -83,6 +83,8 @@ export function LearningSection({ metrics }: { metrics: WebinarMetrics }) {
                 <tr style={{ borderBottom: `1px solid ${C.line}` }}>
                   <th className="px-3 py-2 text-left" style={{ color: C.slate }}>Nama</th>
                   <th className="px-3 py-2 text-left" style={{ color: C.slate }}>Unit</th>
+                  <th className="px-3 py-2 text-left" style={{ color: C.slate }}>Submit Pre-Test</th>
+                  <th className="px-3 py-2 text-left" style={{ color: C.slate }}>Submit Post-Test</th>
                 </tr>
               </thead>
               <tbody>
@@ -90,6 +92,8 @@ export function LearningSection({ metrics }: { metrics: WebinarMetrics }) {
                   <tr key={p.id} style={{ borderBottom: `1px solid ${C.page}` }}>
                     <td className="px-3 py-1.5 font-medium" style={{ color: C.ink }}>{p.name}</td>
                     <td className="px-3 py-1.5" style={{ color: C.inkSoft }}>{p.unit}</td>
+                    <td className="px-3 py-1.5 whitespace-nowrap" style={{ color: C.inkSoft }}>{p.preTimestamp ? formatWib(p.preTimestamp) : "-"}</td>
+                    <td className="px-3 py-1.5 whitespace-nowrap" style={{ color: C.inkSoft }}>{p.postTimestamp ? formatWib(p.postTimestamp) : "-"}</td>
                   </tr>
                 ))}
               </tbody>

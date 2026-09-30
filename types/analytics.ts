@@ -32,7 +32,7 @@ export interface LearningMetrics {
   prePerfectCount: number;
   postPerfectCount: number;
   bothPerfectCount: number;
-  perfectScoreParticipants: { id: string; name: string; unit: string }[];
+  perfectScoreParticipants: { id: string; name: string; unit: string; preTimestamp: string | null; postTimestamp: string | null }[];
   preMin: number | null;
   preMax: number | null;
   postMin: number | null;
