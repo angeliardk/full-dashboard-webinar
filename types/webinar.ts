@@ -62,6 +62,14 @@ export interface Participant {
   exclusionReason: string | null;
   suspectedTestJunk: boolean;
   suspectedTestJunkReason: string | null;
+  /**
+   * One-way hash (sha256 of normalized email, truncated) used to recognize
+   * the same person across different webinars for cross-series rankings --
+   * never the raw email itself, and never reversible back to it. Null when
+   * no email could be resolved for this participant (most uploads won't
+   * have this backfilled; see scripts used to build Summary Rank data).
+   */
+  crossWebinarKey: string | null;
 }
 
 export type FeedbackQuestionType = "likert" | "text";

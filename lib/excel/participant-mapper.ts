@@ -210,6 +210,7 @@ export function mapRowToParticipant(
     exclusionReason: cleanString(get("exclusionReason")),
     suspectedTestJunk: junkReason != null,
     suspectedTestJunkReason: junkReason,
+    crossWebinarKey: null,
   };
 
   return {

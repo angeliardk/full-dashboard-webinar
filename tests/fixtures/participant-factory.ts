@@ -1,4 +1,5 @@
-import type { FeedbackResponse, Participant } from "@/types/webinar";
+import type { FeedbackResponse, Participant, Webinar, WebinarQuestion } from "@/types/webinar";
+import { emptyNarratives } from "@/types/webinar";
 
 let counter = 0;
 
@@ -54,7 +55,51 @@ export function makeParticipant(overrides: Partial<Participant> & { unit?: strin
     exclusionReason: null,
     suspectedTestJunk: false,
     suspectedTestJunkReason: null,
+    crossWebinarKey: null,
     ...rest,
+  };
+}
+
+export function makeWebinar(overrides: Partial<Webinar> & { participants?: Participant[]; questions?: WebinarQuestion[] } = {}): Webinar {
+  counter += 1;
+  const number = overrides.number ?? counter;
+  return {
+    id: `w${number}`,
+    number,
+    metadata: {
+      id: `w${number}`,
+      number,
+      title: `Webinar ${number}`,
+      subtitle: "",
+      theme: "",
+      date: "",
+      speaker: "",
+      seriesName: "Test Series",
+      sourceName: "test",
+      population: null,
+      attendanceThresholdMinutes: 30,
+    },
+    participants: [],
+    feedback: [],
+    questions: [],
+    narratives: emptyNarratives(),
+    importInfo: {
+      sourceFileName: null,
+      sourceSheetNames: [],
+      importedAt: new Date().toISOString(),
+      adapter: "manual",
+      rawRowCount: 0,
+      validRowCount: 0,
+      duplicateRowCount: 0,
+      issues: [],
+      duplicatesDiscarded: [],
+      unmatchedPre: [],
+      unmatchedPost: [],
+      preDedupRows: [],
+      postDedupRows: [],
+      unitSummaryCrossCheck: [],
+    },
+    ...overrides,
   };
 }
 

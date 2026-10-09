@@ -11,6 +11,7 @@ import { SecondaryButton, PrimaryButton, LoadingState, Badge } from "./ui/primit
 import { WebinarUploadWizard } from "./WebinarUploadWizard";
 import { OverviewDashboard } from "./OverviewDashboard";
 import { WebinarDashboard } from "./WebinarDashboard";
+import { SummaryRankSection } from "./SummaryRankSection";
 import { webinarRepository } from "@/lib/storage/indexeddb-repository";
 import { loadSettings, saveSettings } from "@/lib/storage/settings";
 import { getSeenSeedIds, markSeedIdsSeen } from "@/lib/storage/seen-seeds";
@@ -317,6 +318,7 @@ function DashboardShellInner() {
             {sortedWebinars.map((w) => (
               <TabButton key={w.id} active={tab === w.id} onClick={() => setTab(w.id)}>Webinar #{w.number}</TabButton>
             ))}
+            <TabButton active={tab === "summary-rank"} onClick={() => setTab("summary-rank")}>Summary Rank</TabButton>
             <TabButton active={tab === "data"} onClick={() => setTab("data")}>Data / Admin</TabButton>
           </nav>
         </div>
@@ -324,6 +326,7 @@ function DashboardShellInner() {
 
       <main className="mx-auto max-w-[1280px] px-5 py-6">
         {tab === "overview" && <OverviewDashboard entries={crossWebinarEntries} />}
+        {tab === "summary-rank" && <SummaryRankSection webinars={webinars} />}
         {activeEntry && (
           <WebinarDashboard
             key={activeEntry.webinar.id}
