@@ -14,7 +14,7 @@ import { WebinarDashboard } from "./WebinarDashboard";
 import { SummaryRankSection } from "./SummaryRankSection";
 import { webinarRepository } from "@/lib/storage/indexeddb-repository";
 import { loadSettings, saveSettings } from "@/lib/storage/settings";
-import { getSeenSeedIds, markSeedIdsSeen } from "@/lib/storage/seen-seeds";
+import { getSeenSeedVersion, markSeedVersionsSeen, markSeedIdsSeenAtVersion, hashWebinarContent } from "@/lib/storage/seen-seeds";
 import { exportAggregateCsv, exportDashboardJson, importDashboardJson } from "@/lib/storage/export-import";
 import { downloadTemplateWorkbook } from "@/lib/excel/template-generator";
 import { getSeedWebinars } from "@/lib/migration";
@@ -84,24 +84,37 @@ function DashboardShellInner() {
     (async () => {
       let list = await webinarRepository.list();
       // Merge in any seed webinar this browser has never seen before (e.g. a
-      // newly-added Webinar 4 after a code update) without touching existing
-      // local data — no "Reset ke Seed Data" required. A seed already marked
-      // "seen" is never re-added even if it's currently absent, so a
-      // deliberate deletion is respected and never silently undone.
-      const seenIds = new Set(getSeenSeedIds());
+      // newly-added Webinar 6) AND refresh any seed whose *content* changed
+      // upstream since this browser last synced it (a unit-name fix, a new
+      // field like crossWebinarKey, ...) -- without requiring "Reset ke Seed
+      // Data". A seed id already marked seen (at any version) that's
+      // currently absent locally is never re-added, so a deliberate
+      // deletion is respected and never silently undone.
       const seeds = getSeedWebinars();
-      const newSeeds = seeds.filter((w) => !seenIds.has(w.id) && !list.some((existing) => existing.id === w.id));
-      if (newSeeds.length > 0) {
-        for (const w of newSeeds) await webinarRepository.save(w);
+      const seedVersions = new Map(seeds.map((w) => [w.id, hashWebinarContent(w)]));
+      const newSeeds: typeof seeds = [];
+      const refreshedSeeds: typeof seeds = [];
+      for (const w of seeds) {
+        const seenVersion = getSeenSeedVersion(w.id);
+        const existsLocally = list.some((existing) => existing.id === w.id);
+        if (seenVersion == null) {
+          newSeeds.push(w);
+        } else if (existsLocally && seenVersion !== seedVersions.get(w.id)) {
+          refreshedSeeds.push(w);
+        }
+      }
+      const toSync = [...newSeeds, ...refreshedSeeds];
+      if (toSync.length > 0) {
+        for (const w of toSync) await webinarRepository.save(w);
         list = await webinarRepository.list();
       }
-      markSeedIdsSeen(seeds.map((w) => w.id));
+      markSeedVersionsSeen(seeds.map((w) => ({ id: w.id, version: seedVersions.get(w.id) as string })));
       setWebinars(list);
       // Silently keep the shared store in sync too, but only if this browser
       // already has the publish secret cached — never pop the passcode modal
       // just from loading the page.
-      if (newSeeds.length > 0 && storedSecret) {
-        for (const w of newSeeds) {
+      if (toSync.length > 0 && storedSecret) {
+        for (const w of toSync) {
           const { metrics, overriddenKeys } = resolveLocalEntry(w);
           void runAction({ type: "publish", snapshot: buildPublishedSnapshot(w, metrics, overriddenKeys) }, storedSecret);
         }
@@ -248,7 +261,7 @@ function DashboardShellInner() {
     await webinarRepository.clear();
     const seeds = getSeedWebinars();
     for (const w of seeds) await webinarRepository.save(w);
-    markSeedIdsSeen(seeds.map((w) => w.id));
+    markSeedIdsSeenAtVersion(seeds);
     await refresh();
     setTab("overview");
     toast.show("Data direset ke seed awal.", "success");
