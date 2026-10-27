@@ -7,15 +7,37 @@ import { Card, SectionTitle, EmptyState } from "./ui/primitives";
 import { C, colorForIndex, num } from "@/lib/theme";
 import type { WebinarMetrics } from "@/types/analytics";
 
-function truncateLabel(text: string, max = 36): string {
-  if (text.length <= max) return text;
-  return `${text.slice(0, max - 1).trimEnd()}…`;
+const FEEDBACK_LABEL_CHARS_PER_LINE = 42;
+const FEEDBACK_LABEL_LINE_HEIGHT = 13;
+
+/** Breaks a question into lines of at most `maxChars`, only at word boundaries. */
+function wrapLabel(text: string, maxChars = FEEDBACK_LABEL_CHARS_PER_LINE): string[] {
+  const words = text.split(/\s+/).filter(Boolean);
+  const lines: string[] = [];
+  let current = "";
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (candidate.length > maxChars && current) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = candidate;
+    }
+  }
+  if (current) lines.push(current);
+  return lines.length > 0 ? lines : [""];
 }
 
 function FeedbackYAxisTick({ x, y, payload }: { x?: number; y?: number; payload?: { value: string } }) {
+  const lines = wrapLabel(String(payload?.value ?? ""));
+  const offset = -((lines.length - 1) * FEEDBACK_LABEL_LINE_HEIGHT) / 2;
   return (
-    <text x={x} y={y} dy={4} textAnchor="end" fontSize={11} fill={C.inkSoft}>
-      {truncateLabel(String(payload?.value ?? ""))}
+    <text x={x} y={y} textAnchor="end" fontSize={11} fill={C.inkSoft}>
+      {lines.map((line, i) => (
+        <tspan key={i} x={x} dy={i === 0 ? offset + 4 : FEEDBACK_LABEL_LINE_HEIGHT}>
+          {line}
+        </tspan>
+      ))}
     </text>
   );
 }
@@ -28,6 +50,8 @@ export function FeedbackSection({ metrics }: { metrics: WebinarMetrics }) {
 
   const likert = f.questionMetrics.filter((q) => q.type === "likert");
   const chartData = likert.map((q) => ({ name: q.question, avg: q.average, n: q.responseCount }));
+  const maxLabelLines = chartData.reduce((max, d) => Math.max(max, wrapLabel(d.name).length), 1);
+  const chartRowHeight = Math.max(36, maxLabelLines * FEEDBACK_LABEL_LINE_HEIGHT + 18);
 
   const questionOptions = ["Semua", ...new Set(f.textComments.map((c) => c.question))];
   const filteredComments = useMemo(() => {
@@ -55,11 +79,11 @@ export function FeedbackSection({ metrics }: { metrics: WebinarMetrics }) {
           <SectionTitle icon={MessageSquare} hint={`rata-rata per pertanyaan · ${f.distinctRespondentCount} responden`}>
             Rata-rata Feedback per Pertanyaan
           </SectionTitle>
-          <ResponsiveContainer width="100%" height={Math.max(180, likert.length * 40)}>
+          <ResponsiveContainer width="100%" height={Math.max(180, likert.length * chartRowHeight)}>
             <BarChart data={chartData} layout="vertical" margin={{ left: 8, right: 24 }}>
               <CartesianGrid horizontal={false} stroke={C.line} />
               <XAxis type="number" domain={[0, 5]} tick={{ fontSize: 11, fill: C.slate }} axisLine={false} tickLine={false} />
-              <YAxis type="category" dataKey="name" width={240} tick={<FeedbackYAxisTick />} axisLine={false} tickLine={false} />
+              <YAxis type="category" dataKey="name" width={300} tick={<FeedbackYAxisTick />} axisLine={false} tickLine={false} />
               <Tooltip
                 contentStyle={{ borderRadius: 10, border: `1px solid ${C.line}`, fontSize: 12, maxWidth: 320 }}
                 labelFormatter={(label) => String(label)}
