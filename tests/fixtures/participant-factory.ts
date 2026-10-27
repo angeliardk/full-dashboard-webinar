@@ -16,6 +16,7 @@ export function makeParticipant(overrides: Partial<Participant> & { unit?: strin
     phone: null,
     unitFinal: unit ?? "PLN Pusat",
     unitSource: null,
+    company: null,
     identificationCategory: null,
     gender: null,
     age: null,

@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import webinar6 from "@/lib/migration/seed/webinar-6.json";
 import { calculateWebinarMetrics } from "@/lib/analytics/webinar-metrics";
+import { calculateCompanyGroupDistribution, classifyPlnCompanyGroup } from "@/lib/analytics/pln-company-group";
 import { getSeedWebinars } from "@/lib/migration";
 import type { Webinar } from "@/types/webinar";
 
@@ -108,6 +109,24 @@ describe("Webinar 6 baked-in seed", () => {
     for (const q of w6.questions) {
       expect(q.askerName).not.toMatch(/ecadin/i);
     }
+  });
+
+  it("keeps a real 'Nama Perusahaan' company field distinct from unitFinal, so company grouping isn't guessed from a specific office name", () => {
+    const naufal = w6.participants.find((p) => p.name === "Naufal Abiyyudien");
+    expect(naufal).toBeDefined();
+    // real row: company "PLN", unit "UPP Nusa Tenggara 3" -- unitFinal alone has no
+    // "pln" substring, so without a distinct company field this person would
+    // misclassify as "Lainnya / Eksternal" instead of "PLN Pusat".
+    expect(naufal?.company).toBe("PLN");
+    expect(naufal?.unitFinal).not.toMatch(/pln/i);
+    // classifying from unitFinal alone would wrongly land him in "Lainnya / Eksternal";
+    // classifying from the real company field correctly lands him in "PLN Pusat".
+    expect(classifyPlnCompanyGroup(naufal!.company)).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup(naufal!.unitFinal)).not.toBe("PLN Pusat");
+
+    const groups = calculateCompanyGroupDistribution(w6.participants);
+    const groupNames = groups.map((g) => g.unit);
+    expect(groupNames).toEqual(expect.arrayContaining(["PLN Pusat", "PLN Nusantara Power"]));
   });
 
   it("resolves crossWebinarKey for most participants, with no collision among active ones", () => {

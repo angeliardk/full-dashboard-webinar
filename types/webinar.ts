@@ -47,6 +47,11 @@ export interface Participant {
   phone: string | null;
   unitFinal: string;
   unitSource: string | null;
+  /** Raw "Nama Perusahaan" / company field, kept separate from unitFinal (a specific
+   * office/division) so company-level grouping doesn't have to guess it back out of
+   * unit text. Null when the source row had no distinct company column (e.g. quiz-only
+   * submissions, or webinars ingested before this field existed). */
+  company: string | null;
   identificationCategory: string | null;
   gender: string | null;
   age: number | null;
