@@ -7,6 +7,19 @@ import { Card, SectionTitle, EmptyState } from "./ui/primitives";
 import { C, colorForIndex, num } from "@/lib/theme";
 import type { WebinarMetrics } from "@/types/analytics";
 
+function truncateLabel(text: string, max = 36): string {
+  if (text.length <= max) return text;
+  return `${text.slice(0, max - 1).trimEnd()}…`;
+}
+
+function FeedbackYAxisTick({ x, y, payload }: { x?: number; y?: number; payload?: { value: string } }) {
+  return (
+    <text x={x} y={y} dy={4} textAnchor="end" fontSize={11} fill={C.inkSoft}>
+      {truncateLabel(String(payload?.value ?? ""))}
+    </text>
+  );
+}
+
 export function FeedbackSection({ metrics }: { metrics: WebinarMetrics }) {
   const f = metrics.feedback;
   const [questionFilter, setQuestionFilter] = useState<string>("Semua");
@@ -42,12 +55,16 @@ export function FeedbackSection({ metrics }: { metrics: WebinarMetrics }) {
           <SectionTitle icon={MessageSquare} hint={`rata-rata per pertanyaan · ${f.distinctRespondentCount} responden`}>
             Rata-rata Feedback per Pertanyaan
           </SectionTitle>
-          <ResponsiveContainer width="100%" height={Math.max(180, likert.length * 34)}>
+          <ResponsiveContainer width="100%" height={Math.max(180, likert.length * 40)}>
             <BarChart data={chartData} layout="vertical" margin={{ left: 8, right: 24 }}>
               <CartesianGrid horizontal={false} stroke={C.line} />
               <XAxis type="number" domain={[0, 5]} tick={{ fontSize: 11, fill: C.slate }} axisLine={false} tickLine={false} />
-              <YAxis type="category" dataKey="name" width={220} tick={{ fontSize: 11, fill: C.inkSoft }} axisLine={false} tickLine={false} />
-              <Tooltip contentStyle={{ borderRadius: 10, border: `1px solid ${C.line}`, fontSize: 12 }} formatter={(v) => Number(v ?? 0).toFixed(2)} />
+              <YAxis type="category" dataKey="name" width={240} tick={<FeedbackYAxisTick />} axisLine={false} tickLine={false} />
+              <Tooltip
+                contentStyle={{ borderRadius: 10, border: `1px solid ${C.line}`, fontSize: 12, maxWidth: 320 }}
+                labelFormatter={(label) => String(label)}
+                formatter={(v) => Number(v ?? 0).toFixed(2)}
+              />
               <Bar dataKey="avg" radius={[0, 4, 4, 0]}>
                 {chartData.map((_, i) => <Cell key={i} fill={colorForIndex(i)} />)}
               </Bar>
