@@ -181,7 +181,6 @@ describe("calculateQuestionMetrics", () => {
 describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
   it("rolls up PLN Pusat's own divisions/regional offices, keeps real subsidiaries separate", () => {
     expect(classifyPlnCompanyGroup("PLN Pusat")).toBe("PLN Pusat");
-    expect(classifyPlnCompanyGroup("PLN Puslitbang")).toBe("PLN Pusat");
     expect(classifyPlnCompanyGroup("PLN UIP Sumbagsel")).toBe("PLN Pusat");
     expect(classifyPlnCompanyGroup("PLN Pusat Divisi Manajemen Konstruksi")).toBe("PLN Pusat");
     expect(classifyPlnCompanyGroup("PLN Indonesia Power")).toBe("PLN Indonesia Power");
@@ -193,6 +192,14 @@ describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
     expect(classifyPlnCompanyGroup("PLN Icon Plus")).toBe("PLN Icon Plus");
     expect(classifyPlnCompanyGroup("PLN Batam")).toBe("PLN Batam");
     expect(classifyPlnCompanyGroup("PLN Energi Primer Indonesia")).toBe("PLN Energi Primer Indonesia");
+    expect(classifyPlnCompanyGroup("PLN Energy Management Indonesia")).toBe("PLN Energy Management Indonesia");
+    expect(classifyPlnCompanyGroup("PLN MCTN")).toBe("PLN MCTN");
+    // broken out as its own line by request, even though legally part of PLN Pusat.
+    expect(classifyPlnCompanyGroup("PLN Puslitbang")).toBe("PLN Puslitbang");
+    // newest subholding: PT PLN Electricity Services + PT PLN Nusa Daya merger;
+    // registrants may still use either legacy name.
+    expect(classifyPlnCompanyGroup("PLN Nusa Daya")).toBe("PLN Services");
+    expect(classifyPlnCompanyGroup("PT PLN Electricity Services")).toBe("PLN Services");
   });
 
   it("never matches a subsidiary name as a substring of something unrelated", () => {

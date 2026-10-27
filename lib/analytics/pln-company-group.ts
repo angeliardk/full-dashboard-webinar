@@ -3,13 +3,15 @@ import type { UnitDistributionRow } from "@/types/analytics";
 import { activeParticipants, UNIDENTIFIED_UNIT } from "./helpers";
 
 /**
- * Coarse "PLN Pusat vs anak perusahaan PLN" grouping, layered on top of the
- * detailed unitFinal string rather than replacing it -- every specific
- * division/regional office (UIP/UID/UIT/... or an internal center like
- * Puslitbang) still rolls up to "PLN Pusat" here, since legally they're part
- * of PT PLN (Persero) itself, not a separate subsidiary. Order matters:
- * "Nusantara Power Services" must be checked before "Nusantara Power" since
- * the latter is a substring of the former.
+ * Coarse "PLN Pusat vs anak perusahaan/unit tersendiri PLN" grouping, layered
+ * on top of the detailed unitFinal string rather than replacing it -- every
+ * other specific division/regional office (UIP/UID/UIT/...) still rolls up
+ * to "PLN Pusat" here, since legally it's part of PT PLN (Persero) itself,
+ * not a separate subsidiary. Puslitbang (PLN's R&D center) is legally part
+ * of PLN Pusat too, but is broken out as its own line below by request, since
+ * it's commonly thought of as a distinct unit. Order matters: "Nusantara
+ * Power Services" must be checked before "Nusantara Power" since the latter
+ * is a substring of the former.
  */
 const SUBSIDIARY_RULES: { name: string; pattern: RegExp }[] = [
   { name: "PLN Nusantara Power Services", pattern: /nusantara\s*power\s*services?\b|\bnps\b/i },
@@ -21,6 +23,10 @@ const SUBSIDIARY_RULES: { name: string; pattern: RegExp }[] = [
   { name: "PLN Energi Primer Indonesia", pattern: /energi\s*primer\s*indonesia\b/i },
   { name: "PLN Energy Management Indonesia", pattern: /energy\s*management\s*indonesia\b|\bemi\b/i },
   { name: "PLN MCTN", pattern: /\bmctn\b/i },
+  { name: "PLN Puslitbang", pattern: /puslitbang\b/i },
+  // Newest subholding: PT PLN Electricity Services + PT PLN Nusa Daya merged
+  // into "PLN Services" -- registrants may still use either legacy name.
+  { name: "PLN Services", pattern: /nusa\s*daya\b|electricity\s*services\b/i },
 ];
 
 export function classifyPlnCompanyGroup(unit: string | null | undefined): string {
