@@ -6,14 +6,14 @@ import { Card, SectionTitle, Kpi, StatChip, EmptyState } from "./ui/primitives";
 import { SeriesBarChart } from "./charts/SeriesBarChart";
 import { ScatterPrePost } from "./charts/ScatterPrePost";
 import { C, num, formatWib } from "@/lib/theme";
-import { getFastestPerfectScorers } from "@/lib/analytics/learning";
+import type { FastestPerfectScorer } from "@/lib/analytics/learning";
 import type { WebinarMetrics } from "@/types/analytics";
 
 const RANK_COLOR = [C.amber, C.slate, "#B08D57"];
 
-export function LearningSection({ metrics }: { metrics: WebinarMetrics }) {
+export function LearningSection({ metrics, prizeWinners }: { metrics: WebinarMetrics; prizeWinners: FastestPerfectScorer[] }) {
   const l = metrics.learning;
-  const topPerformers = getFastestPerfectScorers(l.pairs, 3);
+  const topPerformers = prizeWinners;
 
   if (l.preRespondentCount === 0 && l.postRespondentCount === 0) {
     return (
@@ -105,7 +105,7 @@ export function LearningSection({ metrics }: { metrics: WebinarMetrics }) {
       </Card>
 
       <Card className="p-5">
-        <SectionTitle icon={Trophy} hint="skor pre & post = 100, diurutkan dari waktu submit post-test tercepat">
+        <SectionTitle icon={Trophy} hint="skor pre & post = 100, diurutkan dari waktu submit post-test tercepat · pemenang voucher webinar sebelumnya tidak diikutkan lagi">
           Top 3 Tercepat dengan Skor Sempurna
         </SectionTitle>
         {topPerformers.length > 0 ? (
@@ -130,7 +130,8 @@ export function LearningSection({ metrics }: { metrics: WebinarMetrics }) {
             ))}
             <p className="mt-1 text-[11px]" style={{ color: C.slateSoft }}>
               Diurutkan dari waktu submit post-test paling awal (bukan durasi pribadi pre→post) di antara peserta dengan skor pre dan post = 100 —
-              seperti perlombaan, siapa yang mengumpulkan post-test tervalid tercepat menang, terlepas dari kapan mereka memulai pre-test.
+              seperti perlombaan, siapa yang mengumpulkan post-test tervalid tercepat menang, terlepas dari kapan mereka memulai pre-test. Peserta
+              yang sudah menang voucher di webinar sebelumnya dalam series ini dilewati, supaya satu orang tidak menang dua kali.
             </p>
           </div>
         ) : (

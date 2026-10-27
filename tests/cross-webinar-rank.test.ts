@@ -6,6 +6,7 @@ import {
   calculateTopAskers,
   calculateHeroAwareness,
   calculateCrossWebinarRankMetrics,
+  calculatePrizeWinnersByWebinar,
 } from "@/lib/analytics/cross-webinar-rank";
 import { makeParticipant, makeWebinar } from "./fixtures/participant-factory";
 import webinar1 from "@/lib/migration/seed/webinar-1.json";
@@ -157,5 +158,57 @@ describe("calculateCrossWebinarRankMetrics against the real committed seeds", ()
         seen.set(p.crossWebinarKey, p.name);
       }
     }
+  });
+});
+
+function perfectScorer(key: string | null, name: string, postTimestamp: string, overrides: Parameters<typeof makeParticipant>[0] = {}) {
+  return makeParticipant({
+    crossWebinarKey: key,
+    name,
+    learning: {
+      tookPre: true, preTimestamp: null, preCorrect: null, preWrong: null, preScore: 100, preAnswers: null,
+      tookPost: true, postTimestamp, postCorrect: null, postWrong: null, postScore: 100, postAnswers: null,
+      scoreDelta: 0, scoreChangeStatus: null, hasPrePost: true,
+    },
+    ...overrides,
+  });
+}
+
+describe("calculatePrizeWinnersByWebinar", () => {
+  it("skips someone who already won a voucher in an earlier webinar (by number, not array order)", () => {
+    const w2 = makeWebinar({
+      number: 2,
+      participants: [perfectScorer(KEY_A, "Budi", "2026-02-01T09:00:00Z"), perfectScorer(KEY_B, "Siti", "2026-02-01T09:05:00Z")],
+    });
+    const w1 = makeWebinar({
+      number: 1,
+      participants: [perfectScorer(KEY_A, "Budi", "2026-01-01T09:00:00Z")],
+    });
+    // passed out of number order on purpose -- the function must sort by webinar.number itself.
+    const result = calculatePrizeWinnersByWebinar([w2, w1], 1);
+    expect(result.get(w1.id)?.map((p) => p.name)).toEqual(["Budi"]);
+    // Budi already won in webinar 1, so webinar 2's limit-1 winner is Siti, not Budi again.
+    expect(result.get(w2.id)?.map((p) => p.name)).toEqual(["Siti"]);
+  });
+
+  it("never excludes someone with no resolvable crossWebinarKey, even across webinars with the same name", () => {
+    const w1 = makeWebinar({ number: 1, participants: [perfectScorer(null, "Nama Umum", "2026-01-01T09:00:00Z")] });
+    const w2 = makeWebinar({ number: 2, participants: [perfectScorer(null, "Nama Umum", "2026-02-01T09:00:00Z")] });
+    const result = calculatePrizeWinnersByWebinar([w1, w2]);
+    expect(result.get(w1.id)).toHaveLength(1);
+    expect(result.get(w2.id)).toHaveLength(1);
+  });
+
+  it("still respects the limit and the fastest-post-test ordering within a single webinar", () => {
+    const w1 = makeWebinar({
+      number: 1,
+      participants: [
+        perfectScorer("k1", "C", "2026-01-01T10:00:00Z"),
+        perfectScorer("k2", "A", "2026-01-01T08:00:00Z"),
+        perfectScorer("k3", "B", "2026-01-01T09:00:00Z"),
+      ],
+    });
+    const result = calculatePrizeWinnersByWebinar([w1], 2);
+    expect(result.get(w1.id)?.map((p) => p.name)).toEqual(["A", "B"]);
   });
 });

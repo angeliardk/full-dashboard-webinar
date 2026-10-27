@@ -5,7 +5,7 @@ import type { LearningPair } from "@/types/analytics";
 function pair(overrides: Partial<LearningPair>): LearningPair {
   return {
     participantId: "p-1", name: "Peserta", unit: "PLN Pusat", pre: 100, post: 100, gain: 0,
-    preTimestamp: null, postTimestamp: null,
+    preTimestamp: null, postTimestamp: null, crossWebinarKey: null,
     ...overrides,
   };
 }
@@ -72,5 +72,20 @@ describe("getFastestPerfectScorers", () => {
     const result = getFastestPerfectScorers(pairs);
     expect(result[0].participantId).toBe("has-pre-but-earlier");
     expect(result[1].participantId).toBe("no-pre-but-later");
+  });
+
+  it("drops a candidate whose crossWebinarKey is in excludeKeys, letting the next-fastest take their place", () => {
+    const pairs = [
+      pair({ participantId: "a", postTimestamp: "2026-01-01T08:00:00Z", crossWebinarKey: "p_already_won" }),
+      pair({ participantId: "b", postTimestamp: "2026-01-01T09:00:00Z", crossWebinarKey: "p_fresh" }),
+    ];
+    const result = getFastestPerfectScorers(pairs, 3, new Set(["p_already_won"]));
+    expect(result.map((p) => p.participantId)).toEqual(["b"]);
+  });
+
+  it("never excludes a candidate with no resolvable crossWebinarKey, even if excludeKeys is non-empty", () => {
+    const pairs = [pair({ participantId: "a", postTimestamp: "2026-01-01T08:00:00Z", crossWebinarKey: null })];
+    const result = getFastestPerfectScorers(pairs, 3, new Set(["something-unrelated"]));
+    expect(result).toHaveLength(1);
   });
 });

@@ -12,6 +12,7 @@ export interface LearningPair {
   gain: number;
   preTimestamp: string | null;
   postTimestamp: string | null;
+  crossWebinarKey: string | null;
 }
 
 export interface LearningMetrics {

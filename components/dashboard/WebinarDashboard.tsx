@@ -14,6 +14,7 @@ import { WebinarEditor } from "./WebinarEditor";
 import { C, num } from "@/lib/theme";
 import type { Participant, Webinar, WebinarMetadata, WebinarNarratives } from "@/types/webinar";
 import type { WebinarMetrics } from "@/types/analytics";
+import type { FastestPerfectScorer } from "@/lib/analytics/learning";
 
 const BASE_SUB_TABS = [
   { id: "ringkasan", label: "Ringkasan" },
@@ -31,6 +32,7 @@ export function WebinarDashboard({
   metrics,
   rawMetrics,
   overriddenKeys,
+  prizeWinners,
   editMode,
   readOnly = false,
   onUpdateNarratives,
@@ -44,6 +46,8 @@ export function WebinarDashboard({
   metrics: WebinarMetrics;
   rawMetrics: WebinarMetrics;
   overriddenKeys: Set<string>;
+  /** Top-N fastest perfect scorers for this webinar, with the series-wide no-repeat-winner rule already applied. */
+  prizeWinners: FastestPerfectScorer[];
   editMode: boolean;
   /** True for a webinar published from another browser — no local participant data to edit here. */
   readOnly?: boolean;
@@ -162,7 +166,7 @@ export function WebinarDashboard({
         </div>
       )}
       {sub === "kehadiran" && <AttendanceSection webinar={webinar} metrics={metrics} />}
-      {sub === "pembelajaran" && <LearningSection metrics={metrics} />}
+      {sub === "pembelajaran" && <LearningSection metrics={metrics} prizeWinners={prizeWinners} />}
       {sub === "feedback" && <FeedbackSection metrics={metrics} />}
       {sub === "pertanyaan" && <QuestionsSection webinar={webinar} metrics={metrics.questions} />}
       {sub === "unit" && <UnitDistributionSection units={metrics.units} companyGroups={metrics.companyGroups} />}

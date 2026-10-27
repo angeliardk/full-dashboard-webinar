@@ -19,6 +19,7 @@ import { exportAggregateCsv, exportDashboardJson, importDashboardJson } from "@/
 import { downloadTemplateWorkbook } from "@/lib/excel/template-generator";
 import { getSeedWebinars } from "@/lib/migration";
 import { calculateWebinarMetrics } from "@/lib/analytics/webinar-metrics";
+import { calculatePrizeWinnersByWebinar } from "@/lib/analytics/cross-webinar-rank";
 import { applyKpiOverrides } from "@/lib/analytics/kpi-overrides";
 import type { WebinarWithMetrics } from "@/lib/analytics/cross-webinar";
 import { buildPublishedSnapshot, buildShellWebinar } from "@/lib/publish/build-snapshot";
@@ -287,6 +288,7 @@ function DashboardShellInner() {
   const sortedWebinars = displayEntries.map((e) => e.webinar);
   const activeEntry = displayEntries.find((e) => e.webinar.id === tab) ?? null;
   const crossWebinarEntries: WebinarWithMetrics[] = displayEntries.map((e) => ({ webinar: e.webinar, metrics: e.metrics }));
+  const prizeWinnersByWebinarId = calculatePrizeWinnersByWebinar(sortedWebinars);
 
   return (
     <div style={{ background: C.page, minHeight: "100vh", color: C.ink, fontFamily: "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" }}>
@@ -347,6 +349,7 @@ function DashboardShellInner() {
             metrics={activeEntry.metrics}
             rawMetrics={activeEntry.rawMetrics}
             overriddenKeys={activeEntry.overriddenKeys}
+            prizeWinners={prizeWinnersByWebinarId.get(activeEntry.webinar.id) ?? []}
             editMode={editMode}
             readOnly={activeEntry.readOnly}
             onUpdateNarratives={(narratives: WebinarNarratives) => handleUpdateWebinar(activeEntry.webinar.id, { narratives })}

@@ -8,6 +8,7 @@ import type {
   ScoreRankEntry,
 } from "@/types/cross-webinar-rank";
 import { activeParticipants, round2 } from "./helpers";
+import { calculateLearningMetrics, getFastestPerfectScorers, type FastestPerfectScorer } from "./learning";
 
 function webinarRef(w: Webinar): RankedWebinarRef {
   return { webinarId: w.id, webinarNumber: w.number, webinarTitle: w.metadata.title };
@@ -208,6 +209,32 @@ export function calculateHeroAwareness(webinars: Webinar[], limit = 5): HeroAwar
     });
 
   return entries.sort((a, b) => b.score - a.score).slice(0, limit);
+}
+
+/**
+ * "Top N fastest perfect scorers" (see getFastestPerfectScorers) applied to
+ * every webinar in number order, with a no-repeat-winner rule layered on
+ * top: once someone wins a voucher in an earlier webinar, they're skipped
+ * in every later webinar's list so the same person doesn't win twice across
+ * the series. Only skips when the repeat is provable via crossWebinarKey —
+ * someone without a resolvable key is never excluded on a guess, same
+ * caveat as every other cross-webinar ranking here.
+ */
+export function calculatePrizeWinnersByWebinar(webinars: Webinar[], limit = 3): Map<string, FastestPerfectScorer[]> {
+  const sorted = [...webinars].sort((a, b) => a.number - b.number);
+  const alreadyWon = new Set<string>();
+  const result = new Map<string, FastestPerfectScorer[]>();
+
+  for (const w of sorted) {
+    const pairs = calculateLearningMetrics(w.participants).pairs;
+    const winners = getFastestPerfectScorers(pairs, limit, alreadyWon);
+    for (const winner of winners) {
+      if (winner.crossWebinarKey) alreadyWon.add(winner.crossWebinarKey);
+    }
+    result.set(w.id, winners);
+  }
+
+  return result;
 }
 
 export function calculateCrossWebinarRankMetrics(webinars: Webinar[]): CrossWebinarRankMetrics {

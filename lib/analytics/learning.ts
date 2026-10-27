@@ -9,6 +9,7 @@ export interface FastestPerfectScorer {
   preTimestamp: string | null;
   postTimestamp: string | null;
   completionMinutes: number | null;
+  crossWebinarKey: string | null;
 }
 
 /**
@@ -21,10 +22,16 @@ export interface FastestPerfectScorer {
  * valid post-test submission wins, regardless of when that person started.
  * completionMinutes is still computed and returned (for display only, not
  * used to rank) when a pre-test timestamp is available.
+ *
+ * `excludeKeys`, when given, drops any candidate whose crossWebinarKey is in
+ * the set before ranking — used to keep someone who already won a voucher in
+ * an earlier webinar in the series from winning again. A candidate with no
+ * resolvable crossWebinarKey is never excluded on a guess.
  */
-export function getFastestPerfectScorers(pairs: LearningPair[], limit = 3): FastestPerfectScorer[] {
+export function getFastestPerfectScorers(pairs: LearningPair[], limit = 3, excludeKeys?: ReadonlySet<string>): FastestPerfectScorer[] {
   return pairs
     .filter((p) => p.pre === 100 && p.post === 100 && p.postTimestamp != null)
+    .filter((p) => !excludeKeys || !p.crossWebinarKey || !excludeKeys.has(p.crossWebinarKey))
     .map((p) => {
       const post = Date.parse(p.postTimestamp as string);
       const pre = p.preTimestamp ? Date.parse(p.preTimestamp) : null;
@@ -36,6 +43,7 @@ export function getFastestPerfectScorers(pairs: LearningPair[], limit = 3): Fast
         preTimestamp: p.preTimestamp,
         postTimestamp: p.postTimestamp,
         completionMinutes,
+        crossWebinarKey: p.crossWebinarKey,
       };
     })
     .sort((a, b) => Date.parse(a.postTimestamp as string) - Date.parse(b.postTimestamp as string))
@@ -111,6 +119,7 @@ export function calculateLearningMetrics(participants: Participant[]): LearningM
       gain: p.learning.scoreDelta ?? (p.learning.postScore as number) - (p.learning.preScore as number),
       preTimestamp: p.learning.preTimestamp,
       postTimestamp: p.learning.postTimestamp,
+      crossWebinarKey: p.crossWebinarKey,
     })),
   };
 }
