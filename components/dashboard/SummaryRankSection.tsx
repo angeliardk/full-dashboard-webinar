@@ -5,6 +5,7 @@ import { Trophy, Repeat, GraduationCap, HelpCircle, Award, Info } from "lucide-r
 import { Card, SectionTitle, Kpi, EmptyState, Badge } from "./ui/primitives";
 import { C, num } from "@/lib/theme";
 import { calculateCrossWebinarRankMetrics } from "@/lib/analytics/cross-webinar-rank";
+import { HERO_CHAMPIONS, HERO_CHAMPIONS_NOTE } from "@/lib/awards/hero-champions";
 import type { Webinar } from "@/types/webinar";
 
 const MEDAL_COLORS = [C.amber, C.slate, "#B87333"]; // gold / silver / bronze-ish
@@ -44,17 +45,49 @@ export function SummaryRankSection({ webinars }: { webinars: Webinar[] }) {
         <Kpi label="Webinar Dibandingkan" value={metrics.totalWebinars} accent={C.slate} />
         <Kpi label="Peserta Teridentifikasi" value={metrics.identifiablePeopleCount} accent={C.cyan} />
         <Kpi label="Paling Konsisten" value={metrics.consistency[0]?.attendedCount ?? 0} accent={C.blue} sub={metrics.consistency[0]?.name ?? "-"} />
-        <Kpi label="Hero Awareness #1" value={metrics.heroAwareness[0]?.score ?? 0} accent={C.amber} sub={metrics.heroAwareness[0]?.name ?? "-"} />
+        <Kpi label="Top Performance #1" value={metrics.heroAwareness[0]?.score ?? 0} accent={C.cyan} sub={metrics.heroAwareness[0]?.name ?? "-"} />
       </div>
 
-      {metrics.heroAwareness.length > 0 && (
-        <Card className="p-5" style={{ background: "linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%)", borderColor: "#FDE68A" }}>
-          <SectionTitle icon={Award} hint="skor gabungan: kehadiran + rata-rata post-test + keaktifan">
-            🏆 Top 5 Hero Awareness ECADIN &amp; PLN
+      <Card className="p-5" style={{ background: "linear-gradient(135deg, #FFFBEB 0%, #FFF7ED 100%)", borderColor: "#FDE68A" }}>
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+          <SectionTitle icon={Award} hint="keputusan final PLN & ECADIN untuk Webinar Series #1–6">
+            🏆 Nuclear Awareness Hero Champions
           </SectionTitle>
+          <Badge tone="amber">Official Recognition</Badge>
+        </div>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          {HERO_CHAMPIONS.map((h) => (
+            <div key={h.name} className="rounded-xl bg-white p-4 text-center" style={{ border: `1px solid ${C.line}` }}>
+              <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full" style={{ background: C.amber + "1F" }}>
+                <Award size={20} style={{ color: C.amber }} />
+              </div>
+              <div className="text-[13.5px] font-semibold" style={{ color: C.ink }}>{h.name}</div>
+              <div className="mt-1 text-[11.5px]" style={{ color: C.slateSoft }}>{h.unit}</div>
+              {h.category && (
+                <div className="mt-2">
+                  <Badge tone="amber">{h.category}</Badge>
+                </div>
+              )}
+              {h.contribution && (
+                <p className="mt-2 text-[11px]" style={{ color: C.inkSoft }}>{h.contribution}</p>
+              )}
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-[11px]" style={{ color: C.slateSoft }}>{HERO_CHAMPIONS_NOTE}</p>
+      </Card>
+
+      {metrics.heroAwareness.length > 0 && (
+        <Card className="p-5">
+          <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
+            <SectionTitle icon={Trophy} hint="skor gabungan: kehadiran + rata-rata post-test + keaktifan">
+              Top 5 Overall Learning Performance
+            </SectionTitle>
+            <Badge tone="blue">Performance Analytics</Badge>
+          </div>
           <div className="space-y-2">
             {metrics.heroAwareness.map((h, i) => (
-              <div key={h.crossWebinarKey} className="flex items-center gap-3 rounded-xl bg-white p-3" style={{ border: `1px solid ${C.line}` }}>
+              <div key={h.crossWebinarKey} className="flex items-center gap-3 rounded-xl p-3" style={{ background: C.page, border: `1px solid ${C.line}` }}>
                 <RankBadge rank={i + 1} />
                 <div className="min-w-0 flex-1">
                   <div className="truncate text-[13.5px] font-semibold" style={{ color: C.ink }}>{h.name}</div>
@@ -66,7 +99,7 @@ export function SummaryRankSection({ webinars }: { webinars: Webinar[] }) {
                   </div>
                 </div>
                 <div className="shrink-0 text-right">
-                  <div className="text-[20px] font-bold leading-none" style={{ color: C.amber }}>{num(h.score)}</div>
+                  <div className="text-[20px] font-bold leading-none" style={{ color: C.cyan }}>{num(h.score)}</div>
                   <div className="mt-1 text-[10.5px]" style={{ color: C.slateSoft }}>
                     hadir {h.attendedCount}/{h.totalWebinars} · post {h.averagePostScore != null ? num(h.averagePostScore) : "-"} · {num(h.questionsAsked)} tanya
                   </div>
@@ -74,6 +107,9 @@ export function SummaryRankSection({ webinars }: { webinars: Webinar[] }) {
               </div>
             ))}
           </div>
+          <p className="mt-3 text-[11px]" style={{ color: C.slateSoft }}>
+            Ranking otomatis dari data (bukan daftar resmi) — tidak selalu sama dengan penerima penghargaan Official Recognition di atas.
+          </p>
         </Card>
       )}
 
@@ -177,9 +213,11 @@ export function SummaryRankSection({ webinars }: { webinars: Webinar[] }) {
         <div className="flex items-start gap-2">
           <Trophy size={14} style={{ color: C.slateSoft, marginTop: 2 }} />
           <p className="text-[11.5px]" style={{ color: C.slateSoft }}>
-            Formula Hero Awareness: kehadiran (maks 40 poin, proporsional dari {metrics.totalWebinars} webinar) + rata-rata skor
-            post-test (maks 35 poin) + keaktifan — tanya &amp; isi feedback (maks 25 poin, jumlah pertanyaan dibatasi hingga 3x
-            biar tidak mendominasi). Bobot ini bisa disesuaikan di <code>lib/analytics/cross-webinar-rank.ts</code>.
+            Formula Top 5 Overall Learning Performance: kehadiran (maks 40 poin, proporsional dari {metrics.totalWebinars} webinar) +
+            rata-rata skor post-test (maks 35 poin) + keaktifan — tanya &amp; isi feedback (maks 25 poin, jumlah pertanyaan dibatasi
+            hingga 3x biar tidak mendominasi). Bobot ini bisa disesuaikan di <code>lib/analytics/cross-webinar-rank.ts</code>. Daftar
+            Nuclear Awareness Hero Champions (Official Recognition) di atas terpisah dari formula ini — dikelola manual di{" "}
+            <code>lib/awards/hero-champions.ts</code>.
           </p>
         </div>
       </Card>
