@@ -238,6 +238,23 @@ describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
     expect(classifyPlnCompanyGroup("8308295Z")).toBe("Lainnya / Eksternal"); // has a letter -- still unresolved on its own
   });
 
+  it("recognizes bare 'Pusat'/'Kantor Pusat' and PLN business-unit names, confirmed by the organizer", () => {
+    expect(classifyPlnCompanyGroup("Pusat")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("Kantor pusat")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("Kantor Pusat")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("Distribusi Jabar")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("DIV RETAIL REG SULMAPANA")).toBe("PLN Pusat");
+    // the bare-word anchor must not fire on "pusat" appearing as part of a longer,
+    // unrelated phrase -- that's a different, much looser claim than "the whole
+    // field just says 'Pusat'".
+    expect(classifyPlnCompanyGroup("Universitas Pusat Jakarta")).not.toBe("PLN Pusat");
+  });
+
+  it("routes a specific company the organizer isn't confident is genuinely external to Tidak Teridentifikasi, not Lainnya/Eksternal", () => {
+    expect(classifyPlnCompanyGroup("PT Mitra Karya Prima")).toBe("Tidak Teridentifikasi");
+    expect(classifyPlnCompanyGroup("pt mitra karya prima")).toBe("Tidak Teridentifikasi");
+  });
+
   it("calculateCompanyGroupDistribution gives unitFinal a second chance when company alone is unreadable or ambiguous", () => {
     // company is a stray ID-looking value, but unitFinal clearly says PLN Pusat.
     const rescuedByUnit = makeParticipant({
@@ -247,7 +264,7 @@ describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
     });
     // a genuine external vendor must NOT be rescued just because they work on a PLN site.
     const genuineExternal = makeParticipant({
-      company: "PT Mitra Karya Prima",
+      company: "PT Vendor Teknologi Nusantara",
       unit: "UP Sebalang",
       attendance: { ...makeParticipant().attendance, zoomValidAttendee: true },
     });

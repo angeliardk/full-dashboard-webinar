@@ -37,12 +37,35 @@ const SUBSIDIARY_RULES: { name: string; pattern: RegExp }[] = [
 // whose company field *was* a clean "PLN", so this isn't a guess.
 const PLN_UNIT_CODE_PATTERN = /\buip\b|\buid\b|\buit\b|\buiw\b|\bup2b\b|\buip2b\b|\buip3b\b|\bpusmanpro\b/i;
 
+// "Distribusi <daerah>" and "Div Retail Reg..." are PLN's own business-unit
+// naming (the registration form's "Nama Perusahaan" column only ever asks
+// which PLN company a participant is from), and bare "Pusat" / "Kantor
+// Pusat" / "Kantor pusat" -- confirmed by the organizer for the specific
+// Webinar 6 registrants who used them -- are too generic a phrase to trust
+// as a substring, so these are anchored to the whole (trimmed) value rather
+// than matched anywhere inside it.
+const PLN_GENERIC_DIVISION_PATTERN = /^(kantor\s*)?pusat$/i;
+const PLN_BUSINESS_UNIT_PATTERN = /^distribusi\b|\bdiv\s*retail\b/i;
+
 function looksLikePln(s: string): boolean {
   // "PLN" fused directly onto the next word (e.g. "PLNE", "PLNUIP SBT") has
   // no word boundary after it for \bpln\b to catch, hence the separate
   // starts-with check.
-  return /\bpln\b/i.test(s) || /^pln/i.test(s) || PLN_UNIT_CODE_PATTERN.test(s);
+  return (
+    /\bpln\b/i.test(s) ||
+    /^pln/i.test(s) ||
+    PLN_UNIT_CODE_PATTERN.test(s) ||
+    PLN_GENERIC_DIVISION_PATTERN.test(s) ||
+    PLN_BUSINESS_UNIT_PATTERN.test(s)
+  );
 }
+
+// A handful of exact company values the organizer has looked at and isn't
+// confident are genuinely a different, named organization (as opposed to
+// yet another messy/abbreviated PLN entry we just haven't matched a pattern
+// for) -- routed to "Tidak Teridentifikasi" rather than asserted as external
+// on a guess. Keyed by the lowercased, trimmed company string.
+const UNCERTAIN_EXTERNAL_OVERRIDES = new Set(["pt mitra karya prima"]);
 
 export function classifyPlnCompanyGroup(unit: string | null | undefined): string {
   const trimmed = unit?.trim();
@@ -51,6 +74,7 @@ export function classifyPlnCompanyGroup(unit: string | null | undefined): string
     if (rule.pattern.test(trimmed)) return rule.name;
   }
   if (looksLikePln(trimmed)) return "PLN Pusat";
+  if (UNCERTAIN_EXTERNAL_OVERRIDES.has(trimmed.toLowerCase())) return UNIDENTIFIED_UNIT;
   // A value with no letters at all ("5", a stray NIP-looking number) isn't
   // evidence of being a genuine external organization -- it's unreadable
   // data, so it belongs with "Tidak Teridentifikasi", not "Lainnya / Eksternal".
