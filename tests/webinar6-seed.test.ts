@@ -48,13 +48,14 @@ describe("Webinar 6 baked-in seed", () => {
         "Netty Herawati",
         "Aker Yunil Fuad",
         "Azzam Aulia",
+        "Fitra Deriyanto",
         "Rifli Mubarak",
         "Layla Salma",
         "Listia Khairunnisa",
         "Nabila Azizah",
       ]),
     );
-    expect(excludedNames.length).toBe(9);
+    expect(excludedNames.length).toBe(10);
     for (const p of w6.participants.filter((p) => p.excluded)) {
       expect(p.exclusionReason).toBeTruthy();
     }
@@ -78,7 +79,7 @@ describe("Webinar 6 baked-in seed", () => {
   it("counts every registrant (minus only the organizer/speaker/BRIN exclusions) toward total registered", () => {
     expect(w6.metadata.attendanceThresholdMinutes).toBe(5);
     const metrics = calculateWebinarMetrics(w6);
-    expect(metrics.attendance.registeredCount).toBe(542);
+    expect(metrics.attendance.registeredCount).toBe(541);
   });
 
   it("uses a 5-minute attendance threshold, converging zoomValidAttendeeCount with zoomPresentCount", () => {
