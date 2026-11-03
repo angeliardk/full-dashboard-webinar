@@ -214,6 +214,48 @@ describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
     expect(classifyPlnCompanyGroup(null)).toBe("Tidak Teridentifikasi");
   });
 
+  it("recognizes 'PLN' fused directly onto the next word, with no space for \\b to catch", () => {
+    // Webinar 6 regression: "PLNE", "PLNUIP SBT" etc. were real PLN staff whose
+    // registration company field had no space after "PLN", so the old \bpln\b-only
+    // check missed them and dumped them into "Lainnya / Eksternal".
+    expect(classifyPlnCompanyGroup("PLNE")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("PLNUIP SBT")).toBe("PLN Pusat");
+  });
+
+  it("recognizes bare PLN-only internal unit codes (UIP/UID/UIT/UIW/UP2B family, Pusmanpro) with no 'PLN' at all", () => {
+    expect(classifyPlnCompanyGroup("UIT JBT")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("UIP2B JAMALI")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("UP2B Jamali")).toBe("PLN Pusat");
+    expect(classifyPlnCompanyGroup("pusmanpro")).toBe("PLN Pusat");
+    // "UP Sebalang" alone must NOT match -- bare "UP" is too generic/short to
+    // safely treat as a PLN-only code (a contractor working on-site still
+    // writes "UP <plant name>" as their work location, not their employer).
+    expect(classifyPlnCompanyGroup("UP Sebalang")).not.toBe("PLN Pusat");
+  });
+
+  it("treats a value with no letters at all as unreadable data, not a genuine external organization", () => {
+    expect(classifyPlnCompanyGroup("5")).toBe("Tidak Teridentifikasi");
+    expect(classifyPlnCompanyGroup("8308295Z")).toBe("Lainnya / Eksternal"); // has a letter -- still unresolved on its own
+  });
+
+  it("calculateCompanyGroupDistribution gives unitFinal a second chance when company alone is unreadable or ambiguous", () => {
+    // company is a stray ID-looking value, but unitFinal clearly says PLN Pusat.
+    const rescuedByUnit = makeParticipant({
+      company: "8308295Z",
+      unit: "PLN PUSAT",
+      attendance: { ...makeParticipant().attendance, zoomValidAttendee: true },
+    });
+    // a genuine external vendor must NOT be rescued just because they work on a PLN site.
+    const genuineExternal = makeParticipant({
+      company: "PT Mitra Karya Prima",
+      unit: "UP Sebalang",
+      attendance: { ...makeParticipant().attendance, zoomValidAttendee: true },
+    });
+    const rows = calculateCompanyGroupDistribution([rescuedByUnit, genuineExternal]);
+    expect(rows.find((r) => r.unit === "PLN Pusat")?.count).toBe(1);
+    expect(rows.find((r) => r.unit === "Lainnya / Eksternal")?.count).toBe(1);
+  });
+
   it("calculateCompanyGroupDistribution groups on the same zoom-valid basis as calculateUnitDistribution", () => {
     const participants = [
       makeParticipant({ unit: "PLN UIP Sumbagsel", attendance: { ...makeParticipant().attendance, zoomValidAttendee: true } }),
