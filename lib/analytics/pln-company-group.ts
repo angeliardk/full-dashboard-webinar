@@ -4,12 +4,11 @@ import { activeParticipants, UNIDENTIFIED_UNIT } from "./helpers";
 
 /**
  * Coarse "PLN Pusat vs anak perusahaan/unit tersendiri PLN" grouping, layered
- * on top of the detailed unitFinal string rather than replacing it -- every
- * other specific division/regional office (UIP/UID/UIT/...) still rolls up
- * to "PLN Pusat" here, since legally it's part of PT PLN (Persero) itself,
- * not a separate subsidiary. Puslitbang (PLN's R&D center) is legally part
- * of PLN Pusat too, but is broken out as its own line below by request, since
- * it's commonly thought of as a distinct unit. Order matters: "Nusantara
+ * on top of the detailed unitFinal string rather than replacing it. None of
+ * these are legally separate from PT PLN (Persero) -- Puslitbang (PLN's R&D
+ * center) and the four regional Unit Induk categories below are broken out
+ * as their own lines purely because that's how the organizer's own reports
+ * present them, not because they're subsidiaries. Order matters: "Nusantara
  * Power Services" must be checked before "Nusantara Power" since the latter
  * is a substring of the former.
  */
@@ -29,13 +28,27 @@ const SUBSIDIARY_RULES: { name: string; pattern: RegExp }[] = [
   { name: "PLN Services", pattern: /nusa\s*daya\b|electricity\s*services\b/i },
 ];
 
-// Internal PLN office/division codes that never spell out "PLN" on their own
-// (UIP = Unit Induk Pembangunan, UID = ...Distribusi, UIT = ...Transmisi, UIW
-// = ...Wilayah, UP2B/UIP2B/UIP3B = beban-pengatur units, Pusmanpro = Pusat
-// Manajemen Proyek) -- confirmed against this same dataset: the exact same
-// codes (e.g. "UIT JBT", "UIP2B JAMALI") appear elsewhere for participants
-// whose company field *was* a clean "PLN", so this isn't a guess.
-const PLN_UNIT_CODE_PATTERN = /\buip\b|\buid\b|\buit\b|\buiw\b|\bup2b\b|\buip2b\b|\buip3b\b|\bpusmanpro\b/i;
+// The four PLN "Unit Induk" regional categories -- broken out as their own
+// lines (same spirit as Puslitbang/PLN Services above) rather than folded
+// into generic "PLN Pusat", matching the naming the organizer's own report
+// uses. Checked before the generic PLN_UNIT_CODE_PATTERN below so e.g. "UIP
+// JBB" lands here, not in the generic bucket.
+const REGIONAL_UNIT_RULES: { name: string; pattern: RegExp }[] = [
+  { name: "PLN Unit Induk Pembangkit (UIP)", pattern: /\buip\b/i },
+  { name: "PLN Unit Induk Distribusi (UID)", pattern: /\buid\b/i },
+  { name: "PLN Unit Induk Transmisi (UIT)", pattern: /\buit\b/i },
+  { name: "PLN Unit Induk Wilayah (UIW)", pattern: /\buiw\b/i },
+];
+
+// Internal PLN office/division codes that never spell out "PLN" on their own,
+// but -- unlike the four regional categories above -- stay folded into the
+// generic "PLN Pusat" bucket rather than broken out further: UP2B/UIP2B/
+// UIP3B (beban-pengatur/load-dispatch units) and Pusmanpro (Pusat Manajemen
+// Proyek) aren't one of the organizer's four report categories. Confirmed
+// against this same dataset: the exact same codes (e.g. "UIT JBT", "UIP2B
+// JAMALI") appear elsewhere for participants whose company field *was* a
+// clean "PLN", so none of this is a guess.
+const PLN_UNIT_CODE_PATTERN = /\bup2b\b|\buip2b\b|\buip3b\b|\bpusmanpro\b/i;
 
 // "Distribusi <daerah>" and "Div Retail Reg..." are PLN's own business-unit
 // naming (the registration form's "Nama Perusahaan" column only ever asks
@@ -73,6 +86,9 @@ export function classifyPlnCompanyGroup(unit: string | null | undefined): string
   for (const rule of SUBSIDIARY_RULES) {
     if (rule.pattern.test(trimmed)) return rule.name;
   }
+  for (const rule of REGIONAL_UNIT_RULES) {
+    if (rule.pattern.test(trimmed)) return rule.name;
+  }
   if (looksLikePln(trimmed)) return "PLN Pusat";
   if (UNCERTAIN_EXTERNAL_OVERRIDES.has(trimmed.toLowerCase())) return UNIDENTIFIED_UNIT;
   // A value with no letters at all ("5", a stray NIP-looking number) isn't
@@ -82,23 +98,33 @@ export function classifyPlnCompanyGroup(unit: string | null | undefined): string
   return "Lainnya / Eksternal";
 }
 
+// "PLN Pusat" is the generic fallback match (just "PLN" with no further
+// specifics) -- a weak signal that a more specific field should be allowed
+// to override, unlike a real subsidiary or regional-unit match.
+const GENERIC_GROUPS = new Set(["PLN Pusat", "Lainnya / Eksternal", UNIDENTIFIED_UNIT]);
+
 /**
  * Same basis as calculateUnitDistribution (active + Zoom-valid attendees), grouped
- * coarser. Classifies from the participant's own company field (the raw "Nama
- * Perusahaan" registration column) first -- unitFinal is a specific office/
- * division (e.g. "UP3 KUALA KAPUAS") and often doesn't contain the company name
- * at all. When the company field is messy enough that neither it nor the
- * SUBSIDIARY_RULES/looksLikePln checks can place it, unitFinal gets a second
- * try before we conclude the person is a genuine external participant (see
- * classifyParticipantCompany) -- this is what catches e.g. a company field
- * that's a stray ID number but a unitFinal of "PLN Pusat".
+ * coarser. Classifies from whichever of company/unitFinal gives the most specific
+ * answer -- company (the raw "Nama Perusahaan" registration column) is usually the
+ * more reliable field, but it's very often just a bare "PLN" with no further detail,
+ * while unitFinal carries the actual regional unit ("UIP JBB", "UID Sulselrabar").
+ * Checking company alone and stopping the moment it resolves to generic "PLN Pusat"
+ * would throw that detail away, so a generic "PLN Pusat" match from either field is
+ * held as a fallback rather than returned immediately -- the loop keeps looking for
+ * a specific subsidiary or regional-unit match in the other field first. This is
+ * also what catches e.g. a company field that's a stray ID number but a unitFinal
+ * of "PLN Pusat".
  */
 function classifyParticipantCompany(p: Participant): string {
   const candidates = [p.company, p.unitFinal].filter((f): f is string => !!f && f.trim() !== "");
+  let genericFallback: string | null = null;
   for (const field of candidates) {
     const group = classifyPlnCompanyGroup(field);
-    if (group !== "Lainnya / Eksternal" && group !== UNIDENTIFIED_UNIT) return group;
+    if (!GENERIC_GROUPS.has(group)) return group;
+    if (group === "PLN Pusat" && genericFallback == null) genericFallback = group;
   }
+  if (genericFallback) return genericFallback;
   return classifyPlnCompanyGroup(p.company ?? p.unitFinal);
 }
 

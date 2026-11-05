@@ -181,7 +181,6 @@ describe("calculateQuestionMetrics", () => {
 describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
   it("rolls up PLN Pusat's own divisions/regional offices, keeps real subsidiaries separate", () => {
     expect(classifyPlnCompanyGroup("PLN Pusat")).toBe("PLN Pusat");
-    expect(classifyPlnCompanyGroup("PLN UIP Sumbagsel")).toBe("PLN Pusat");
     expect(classifyPlnCompanyGroup("PLN Pusat Divisi Manajemen Konstruksi")).toBe("PLN Pusat");
     expect(classifyPlnCompanyGroup("PLN Indonesia Power")).toBe("PLN Indonesia Power");
     expect(classifyPlnCompanyGroup("PLN Nusantara Power")).toBe("PLN Nusantara Power");
@@ -222,8 +221,7 @@ describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
     expect(classifyPlnCompanyGroup("PLNUIP SBT")).toBe("PLN Pusat");
   });
 
-  it("recognizes bare PLN-only internal unit codes (UIP/UID/UIT/UIW/UP2B family, Pusmanpro) with no 'PLN' at all", () => {
-    expect(classifyPlnCompanyGroup("UIT JBT")).toBe("PLN Pusat");
+  it("recognizes bare PLN-only internal unit codes (UP2B family, Pusmanpro) with no 'PLN' at all, folded into PLN Pusat", () => {
     expect(classifyPlnCompanyGroup("UIP2B JAMALI")).toBe("PLN Pusat");
     expect(classifyPlnCompanyGroup("UP2B Jamali")).toBe("PLN Pusat");
     expect(classifyPlnCompanyGroup("pusmanpro")).toBe("PLN Pusat");
@@ -231,6 +229,20 @@ describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
     // safely treat as a PLN-only code (a contractor working on-site still
     // writes "UP <plant name>" as their work location, not their employer).
     expect(classifyPlnCompanyGroup("UP Sebalang")).not.toBe("PLN Pusat");
+  });
+
+  it("breaks out the four PLN Unit Induk regional categories (UIP/UID/UIT/UIW) as their own lines, matching the organizer's report", () => {
+    expect(classifyPlnCompanyGroup("PLN UIP Sumbagsel")).toBe("PLN Unit Induk Pembangkit (UIP)");
+    expect(classifyPlnCompanyGroup("UIP Sulawesi")).toBe("PLN Unit Induk Pembangkit (UIP)");
+    expect(classifyPlnCompanyGroup("UID SULSELRABAR")).toBe("PLN Unit Induk Distribusi (UID)");
+    expect(classifyPlnCompanyGroup("UIT JBT")).toBe("PLN Unit Induk Transmisi (UIT)");
+    expect(classifyPlnCompanyGroup("PLN UIW Babel")).toBe("PLN Unit Induk Wilayah (UIW)");
+    // UIP2B/UIP3B/UP2B must NOT be swept into the UIP bucket -- the digit
+    // right after "uip"/"up" blocks the \b boundary the UIP rule needs, so
+    // these stay in the generic "PLN Pusat" bucket (not one of the
+    // organizer's four report categories).
+    expect(classifyPlnCompanyGroup("UIP2B JAMALI")).not.toBe("PLN Unit Induk Pembangkit (UIP)");
+    expect(classifyPlnCompanyGroup("UIP3B Sumatera")).not.toBe("PLN Unit Induk Pembangkit (UIP)");
   });
 
   it("treats a value with no letters at all as unreadable data, not a genuine external organization", () => {
@@ -281,7 +293,8 @@ describe("classifyPlnCompanyGroup / calculateCompanyGroupDistribution", () => {
       makeParticipant({ unit: "PLN Indonesia Power", attendance: { ...makeParticipant().attendance, zoomValidAttendee: false } }),
     ];
     const rows = calculateCompanyGroupDistribution(participants);
-    expect(rows.find((r) => r.unit === "PLN Pusat")?.count).toBe(2);
+    expect(rows.find((r) => r.unit === "PLN Pusat")?.count).toBe(1);
+    expect(rows.find((r) => r.unit === "PLN Unit Induk Pembangkit (UIP)")?.count).toBe(1);
     expect(rows.find((r) => r.unit === "PLN Indonesia Power")?.count).toBe(1);
     expect(rows.reduce((s, r) => s + r.count, 0)).toBe(3);
   });
